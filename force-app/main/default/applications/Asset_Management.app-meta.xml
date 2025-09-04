@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0176D3</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Asset-Centric Commerce application for managing asset categories, types, and product relationships</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Asset Management</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Asset_Category__c</tabs>
+    <tabs>Asset_Type__c</tabs>
+    <tabs>Asset_Type_Product__c</tabs>
+    <tabs>standard-Asset</tabs>
+    <tabs>standard-Product2</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>
