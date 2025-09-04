@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customTabListAdditionalFields>PRODUCT2.PRODUCT_CODE</customTabListAdditionalFields>
+    <customTabListAdditionalFields>Asset_Type__c</customTabListAdditionalFields>
+    <customTabListAdditionalFields>PRODUCT2.FAMILY</customTabListAdditionalFields>
+    <customTabListAdditionalFields>PRODUCT2.IS_ACTIVE</customTabListAdditionalFields>
+    <excludedStandardButtons>Accept</excludedStandardButtons>
+    <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+    <listViewButtons>New</listViewButtons>
+    <lookupDialogsAdditionalFields>PRODUCT2.PRODUCT_CODE</lookupDialogsAdditionalFields>
+    <lookupDialogsAdditionalFields>Asset_Type__c</lookupDialogsAdditionalFields>
+    <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
+    <lookupDialogsAdditionalFields>PRODUCT2.IS_ACTIVE</lookupDialogsAdditionalFields>
+    <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
+    <lookupPhoneDialogsAdditionalFields>PRODUCT2.PRODUCT_CODE</lookupPhoneDialogsAdditionalFields>
+    <lookupPhoneDialogsAdditionalFields>Asset_Type__c</lookupPhoneDialogsAdditionalFields>
+    <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
+    <searchFilterFields>PRODUCT2.NAME</searchFilterFields>
+    <searchFilterFields>PRODUCT2.PRODUCT_CODE</searchFilterFields>
+    <searchFilterFields>Asset_Type__c</searchFilterFields>
+    <searchFilterFields>PRODUCT2.FAMILY</searchFilterFields>
+    <searchFilterFields>PRODUCT2.IS_ACTIVE</searchFilterFields>
+    <searchFilterFields>PRODUCT2.CREATED_DATE</searchFilterFields>
+    <searchFilterFields>PRODUCT2.CREATEDBY_USER</searchFilterFields>
+    <searchResultsAdditionalFields>PRODUCT2.PRODUCT_CODE</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields>Asset_Type__c</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields>PRODUCT2.FAMILY</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields>PRODUCT2.IS_ACTIVE</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields>PRODUCT2.CREATED_DATE</searchResultsAdditionalFields>
+</SearchLayout>
