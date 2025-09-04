@@ -15,17 +15,29 @@
 
 ## MCP (Model Context Protocol) Guidelines
 
-### Salesforce MCP Usage
-- Use MCP Salesforce tools for deployment and org management
-- Always specify the correct directory parameter (full path to project root)
-- Use sf-get-username tool when uncertain about which org to target
+### Salesforce MCP Server Usage
+- **CRITICAL**: Always use the server name `Salesforce DX` when calling MCP tools
+- **DO NOT** use the command line `npx -y @salesforce/mcp --orgs DEFAULT_TARGET_ORG --toolsets all` as the server name
+- The server name in use_mcp_tool should match the "Connected MCP Servers" list, not the installation command
+
+### Project-Specific Salesforce Org Configuration
+- **Default Org**: Use `scocchiarella@aleysian.com.assetcentriccommerce2` (Alias: ACC2)
+- **Reasoning**: This is the only org found in the MCP Server's allowlisted orgs
+- **Usage**: Use this username for the `usernameOrAlias` parameter in all Salesforce MCP tool calls unless user specifies otherwise
+
+### Salesforce MCP Tool Usage Best Practices
+- Always specify the correct directory parameter: `/Users/stevencocchiarella/VSCode/AssetCentricCommerce2`
+- Use `sf-get-username` tool when uncertain about which org to target (but default to ACC2 org above)
+- For deployment operations, use `sf-deploy-metadata` tool with proper source directories
+- For retrieving metadata, use `sf-retrieve-metadata` tool
 
 ### MCP Connection Troubleshooting
-- **Server Connection Error**: If you encounter "No connection found for server" error when using MCP tools:
+- **Server Connection Error**: If you encounter "No connection found for server" error:
+  - Verify you're using `Salesforce DX` as the server name, not the installation command
+  - Check the "Connected MCP Servers" section in environment details for exact server names
   - The MCP server name in the environment may not match the actual connected server
   - Try using standard Salesforce CLI commands as fallback: `sf org assign permset -n PermissionSetName`
   - Ensure target org is configured: `sf config set target-org your-org-alias`
-  - MCP servers need to be properly configured in the IDE's MCP settings
 
 ### MCP Issue Troubleshooting
 - **Master-Detail Field Configuration**: Do not specify `<required>true</required>` for Master-Detail fields as they are automatically required. This will cause deployment errors.
