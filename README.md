@@ -322,3 +322,53 @@ sf apex run test --test-level RunLocalTests
 - [Product Pricing Service](PRODUCT_PRICING_SERVICE.md) - Commerce integration service documentation
 
 This accelerator provides the foundation - customize and extend it to meet your specific business requirements.
+
+---
+
+## For AI Agents and Developers
+
+### Task Completion Protocol
+
+When working on this project, **always run the quick-commit script as your final step** before marking any task as complete. A task is only considered "done" when:
+
+#### Prerequisites for Task Completion ✅
+
+1. **All Changes Deployed**: 
+   - Metadata successfully deployed to target org
+   - No deployment errors or warnings
+   - All components are functional in the org
+
+2. **Tests Passing**:
+   - All existing tests continue to pass
+   - New test classes created for any new Apex classes
+   - Test coverage maintained at acceptable levels
+   - All relevant test methods passing locally
+
+3. **Code Committed**:
+   - All changes staged and committed to repository
+   - Descriptive commit message explaining the changes
+   - Changes pushed to remote repository
+
+#### Final Step: Quick Commit
+
+Use the automated commit script to ensure all work is properly saved:
+
+```bash
+# Unix/Linux/macOS
+./scripts/quick-commit.sh "Descriptive commit message explaining what was accomplished"
+
+# Windows
+scripts\quick-commit.bat "Descriptive commit message explaining what was accomplished"
+```
+
+#### Why This Matters
+
+- **Preserves Work**: Ensures no changes are lost
+- **Maintains History**: Creates proper git history for tracking
+- **Enables Collaboration**: Makes changes available to other developers
+- **Supports Rollback**: Provides restore points if issues arise
+- **Documentation**: Commit messages serve as change documentation
+
+**⚠️ Important**: If deployment fails, tests fail, or the quick-commit script encounters errors, the task is **NOT complete**. Address all issues before considering the work finished.
+
+This protocol ensures consistent, reliable development practices and maintains the integrity of the codebase.
