@@ -1,7 +1,7 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getAccountAssets from '@salesforce/apex/AssetProductController.getAccountAssets';
-import getCompatibleProducts from '@salesforce/apex/AssetProductController.getCompatibleProducts';
+import getCompatibleProductsWithStoreName from '@salesforce/apex/AssetProductController.getCompatibleProductsWithStoreName';
 
 const TREE_COLUMNS = [
     {
@@ -36,7 +36,7 @@ const TREE_COLUMNS = [
 
 export default class AssetProductExplorer extends LightningElement {
     @api recordId; // Account ID when used on Account page
-    @api webstoreId; // B2B Commerce webstore ID
+    @api webstoreName; // B2B Commerce webstore name (environment portable)
     @api effectiveAccountId; // Account ID for pricing context
     
     @track assetData = [];
@@ -126,9 +126,9 @@ export default class AssetProductExplorer extends LightningElement {
         
         this.isLoadingProducts = true;
         try {
-            const result = await getCompatibleProducts({
+            const result = await getCompatibleProductsWithStoreName({
                 assetId: this.selectedAssetId,
-                webstoreId: this.webstoreId,
+                webstoreName: this.webstoreName,
                 effectiveAccountId: this.effectiveAccountId || this.recordId
             });
             

@@ -11,14 +11,19 @@ Successfully created a Lightning Web Component that displays account assets in a
 
 **Key Methods**:
 - `getAccountAssets(String accountId)` - Returns hierarchical asset tree structure
-- `getCompatibleProducts(String assetId, String webstoreId, String effectiveAccountId)` - Gets compatible products with pricing
+- `getCompatibleProductsWithStoreName(String assetId, String webstoreName, String effectiveAccountId)` - Gets compatible products using webstore name
+- `getCompatibleProducts(String assetId, String webstoreId, String effectiveAccountId)` - Legacy method with smart webstore name detection
+- `getWebstoreId(String webstoreName)` - Resolves webstore name to ID for environment portability
+- `getAvailableWebstoreNames()` - Returns list of all available webstore names for configuration
 - `getAssetDetails(String assetId)` - Returns detailed asset information
 
 **Features**:
 - Tree structure building from flat Asset records using parent-child relationships
 - Integration with existing ProductPricingService for commerce pricing
+- **Environment-Portable WebStore Resolution**: Uses webstore names for deployment across orgs
 - Comprehensive error handling with AuraHandledException
 - Support for hierarchical asset display with Asset_Hierarchy_Path__c formula field
+- Smart webstore name detection in legacy methods
 
 ### 2. AssetProductExplorer LWC
 **Purpose**: Main component combining asset tree grid with product side panel
@@ -33,7 +38,7 @@ Successfully created a Lightning Web Component that displays account assets in a
 
 **Properties**:
 - `recordId` - Account ID (auto-populated on Account record pages)
-- `webstoreId` - B2B Commerce webstore ID for pricing
+- `webstoreName` - B2B Commerce webstore name for pricing (environment portable)
 - `effectiveAccountId` - Account ID for pricing context
 
 ### 3. ProductCard LWC
@@ -110,13 +115,19 @@ Parent Component Cart Integration
 
 ### On Account Record Pages
 1. Add `assetProductExplorer` component to Account record page
-2. Configure optional `webstoreId` for pricing
+2. Configure `webstoreName` for B2B Commerce pricing
 3. Component automatically loads assets for the account
 
 ### On App/Home Pages
 1. Add component and configure `recordId` property
-2. Set `webstoreId` and `effectiveAccountId` for pricing context
-3. Users can select assets and view compatible products
+2. Set `webstoreName` for pricing context
+3. Set `effectiveAccountId` for pricing context
+4. Users can select assets and view compatible products
+
+### WebStore Configuration
+- **Environment-Portable**: Use webstore names that remain consistent across environments
+- **Simple Configuration**: Single `webstoreName` property for all deployment scenarios
+- **No ID Management**: Administrators don't need to manage environment-specific webstore IDs
 
 ## Business Value
 

@@ -260,11 +260,13 @@ After loading sample data, try the interactive Asset Product Explorer:
 
 1. **Navigate to an Account** - Go to any Account record page
 2. **Add the Component** - Edit the page and add "Asset Product Explorer" component
-3. **Configure Settings** - Optionally set webstoreId for B2B Commerce pricing
+3. **Configure Settings** - Set webstoreName for B2B Commerce pricing
 4. **Explore Assets** - Select assets in the tree grid to see compatible products
 5. **Add to Cart** - Use quantity controls and add-to-cart functionality
 
 The component demonstrates the core asset-centric commerce workflow with real hierarchical asset data and product compatibility relationships.
+
+**💡 Tip**: Use webstore names instead of IDs for environment portability - names stay consistent when deploying between Sandbox and Production.
 
 ### Troubleshooting
 

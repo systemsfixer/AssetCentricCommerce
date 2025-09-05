@@ -113,14 +113,14 @@ public with sharing class AssetProductController {
     }
     
     /**
-     * @description Get compatible products for a specific asset
+     * @description Get compatible products for a specific asset using webstore name
      * @param assetId The asset ID to get compatible products for
-     * @param webstoreId The webstore ID for pricing context
+     * @param webstoreName The webstore name for pricing context (environment portable)
      * @param effectiveAccountId The account ID for pricing context
      * @return List<CompatibleProduct> List of compatible products with pricing
      */
     @AuraEnabled
-    public static List<CompatibleProduct> getCompatibleProducts(String assetId, String webstoreId, String effectiveAccountId) {
+    public static List<CompatibleProduct> getCompatibleProductsWithStoreName(String assetId, String webstoreName, String effectiveAccountId) {
         if (String.isBlank(assetId)) {
             return new List<CompatibleProduct>();
         }
@@ -169,11 +169,20 @@ public with sharing class AssetProductController {
             // Get pricing information using the existing ProductPricingService
             List<CompatibleProduct> result = new List<CompatibleProduct>();
             
-            if (String.isNotBlank(webstoreId) && String.isNotBlank(effectiveAccountId)) {
+            // Resolve webstore name to ID for pricing service
+            String resolvedWebstoreId = null;
+            if (String.isNotBlank(webstoreName)) {
+                resolvedWebstoreId = getWebstoreId(webstoreName);
+                if (String.isBlank(resolvedWebstoreId)) {
+                    System.debug('AssetProductController: Could not resolve webstore name: ' + webstoreName);
+                }
+            }
+            
+            if (String.isNotBlank(resolvedWebstoreId) && String.isNotBlank(effectiveAccountId)) {
                 // Use pricing service to get prices
                 ProductPricingService.FlowInput pricingInput = new ProductPricingService.FlowInput();
                 pricingInput.products = products;
-                pricingInput.webstoreId = webstoreId;
+                pricingInput.webstoreId = resolvedWebstoreId;
                 pricingInput.effectiveAccountId = effectiveAccountId;
                 
                 List<List<ProductPricingService.ProductWithPricing>> pricingResults = 
@@ -259,6 +268,82 @@ public with sharing class AssetProductController {
         } catch (Exception e) {
             System.debug('AssetProductController.getAssetDetails error: ' + e.getMessage());
             throw new AuraHandledException('Error retrieving asset details: ' + e.getMessage());
+        }
+    }
+    
+    /**
+     * @description Get compatible products for a specific asset (backward compatibility)
+     * @param assetId The asset ID to get compatible products for
+     * @param webstoreId The webstore ID for pricing context
+     * @param effectiveAccountId The account ID for pricing context
+     * @return List<CompatibleProduct> List of compatible products with pricing
+     */
+    @AuraEnabled
+    public static List<CompatibleProduct> getCompatibleProducts(String assetId, String webstoreId, String effectiveAccountId) {
+        // For backward compatibility, treat webstoreId as webstoreName if it doesn't look like an ID
+        String webstoreName = null;
+        if (String.isNotBlank(webstoreId) && !webstoreId.startsWith('0ZE')) {
+            // Looks like a name, not an ID
+            webstoreName = webstoreId;
+        }
+        return getCompatibleProductsWithStoreName(assetId, webstoreName, effectiveAccountId);
+    }
+    
+    /**
+     * @description Resolve webstore name to webstore ID for environment portability
+     * @param webstoreName The name of the webstore
+     * @return String The webstore ID, or null if not found
+     */
+    @AuraEnabled(cacheable=true)
+    public static String getWebstoreId(String webstoreName) {
+        if (String.isBlank(webstoreName)) {
+            return null;
+        }
+        
+        try {
+            List<WebStore> webstores = [
+                SELECT Id, Name 
+                FROM WebStore 
+                WHERE Name = :webstoreName 
+                LIMIT 1
+            ];
+            
+            if (!webstores.isEmpty()) {
+                System.debug('AssetProductController: Found webstore ID ' + webstores[0].Id + ' for name: ' + webstoreName);
+                return webstores[0].Id;
+            } else {
+                System.debug('AssetProductController: No webstore found with name: ' + webstoreName);
+                return null;
+            }
+            
+        } catch (Exception e) {
+            System.debug('AssetProductController.getWebstoreId error: ' + e.getMessage());
+            return null;
+        }
+    }
+    
+    /**
+     * @description Get all available webstore names for configuration
+     * @return List<String> List of webstore names
+     */
+    @AuraEnabled(cacheable=true)
+    public static List<String> getAvailableWebstoreNames() {
+        try {
+            List<WebStore> webstores = [SELECT Name FROM WebStore ORDER BY Name ASC];
+            List<String> webstoreNames = new List<String>();
+            
+            for (WebStore ws : webstores) {
+                if (String.isNotBlank(ws.Name)) {
+                    webstoreNames.add(ws.Name);
+                }
+            }
+            
+            System.debug('AssetProductController: Found ' + webstoreNames.size() + ' webstores');
+            return webstoreNames;
+            
+        } catch (Exception e) {
+            System.debug('AssetProductController.getAvailableWebstoreNames error: ' + e.getMessage());
+            return new List<String>();
         }
     }
 }

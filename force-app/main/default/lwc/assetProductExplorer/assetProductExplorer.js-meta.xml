@@ -12,12 +12,12 @@
             <objects>
                 <object>Account</object>
             </objects>
-            <property name="webstoreId" type="String" label="Webstore ID" description="B2B Commerce Webstore ID for pricing" />
+            <property name="webstoreName" type="String" label="Webstore Name" description="B2B Commerce Webstore Name for pricing (environment portable)" />
             <property name="effectiveAccountId" type="String" label="Effective Account ID" description="Account ID for pricing context (uses record ID if blank)" />
         </targetConfig>
         <targetConfig targets="lightning__AppPage,lightning__HomePage">
             <property name="recordId" type="String" label="Account ID" description="Account ID to display assets for" />
-            <property name="webstoreId" type="String" label="Webstore ID" description="B2B Commerce Webstore ID for pricing" />
+            <property name="webstoreName" type="String" label="Webstore Name" description="B2B Commerce Webstore Name for pricing (environment portable)" />
             <property name="effectiveAccountId" type="String" label="Effective Account ID" description="Account ID for pricing context" />
         </targetConfig>
     </targetConfigs>
