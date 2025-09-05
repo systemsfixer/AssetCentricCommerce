@@ -1,0 +1,13 @@
+External_Id__c,Name,Asset_Category__r:Asset_Category__c:External_Id__c,Description__c
+ACUSON_CYPRESS,Acuson Cypress,ULTRASOUND,Portable ultrasound system for cardiovascular and general imaging.
+SOMATOM_DEFINITION,SOMATOM Definition,CT,CT scanner platform for multi-slice diagnostic imaging and angiography.
+SOMATOM_FORCE,SOMATOM Force,CT,Dual-source high-end CT system optimized for low dose and fast cardiac imaging.
+AXIOM_ARISTOS,AXIOM Aristos,XRAY,Digital radiography system for general X-ray exams.
+NAEOTOM_ALPHA,NAEOTOM Alpha,CT,Photon-counting CT system delivering high spatial resolution and spectral imaging.
+BIOGRAPH_TRUEPOINT_PET_CT,Biograph TruePoint PET/CT,MOLECULAR_IMAGING,"Integrated PET/CT system for oncology, cardiology, and neurology."
+MAGNETOM_1_5T_AERA,MAGNETOM 1.5 T Aera,MRI,1.5T MRI system for routine and advanced clinical applications.
+MAGNETOM_1_5T_ESSENZA,MAGNETOM 1.5 T Essenza,MRI,Value-focused 1.5T MRI system for reliable daily imaging.
+SYMBIA_TRUEPOINT_SPECT_CT,Symbia TruePoint SPECT-CT,MOLECULAR_IMAGING,Hybrid SPECT/CT system for functional and anatomical imaging.
+AXIOM_ICONOS,AXIOM Iconos,XRAY,Fluoroscopy / radiography system for interventional and diagnostic procedures.
+DOCULIVE_EPR,DocuLive (EPR),CLINICAL_WORKFLOW_IT,Electronic patient record and clinical workflow solution.
+SYNGO_IMAGING_XS,Syngo Imaging XS,IMAGING_IT,Imaging IT platform for PACS / reporting and departmental workflow.

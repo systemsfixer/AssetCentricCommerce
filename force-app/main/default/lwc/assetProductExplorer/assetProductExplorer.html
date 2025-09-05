@@ -1,0 +1,104 @@
+<template>
+    <lightning-card title="Asset & Product Explorer" icon-name="utility:asset_object">
+        <div class="slds-p-horizontal_medium">
+            
+            <!-- Loading State -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading assets..." size="medium"></lightning-spinner>
+            </template>
+            
+            <!-- Error State -->
+            <template if:true={error}>
+                <div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_medium">
+                    <h2>Error loading data</h2>
+                    <p>{error.body.message}</p>
+                </div>
+            </template>
+            
+            <!-- Main Content -->
+            <template if:false={isLoading}>
+                <div class="slds-grid slds-gutters slds-wrap">
+                    
+                    <!-- Left Panel: Asset Tree Grid -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+                        <lightning-card title="Your Assets" icon-name="utility:hierarchy">
+                            <div class="slds-p-around_medium">
+                                <template if:true={hasAssets}>
+                                    <lightning-tree-grid
+                                        data={assetData}
+                                        columns={treeColumns}
+                                        key-field="id"
+                                        max-row-selection="1"
+                                        onrowselection={handleAssetSelection}
+                                        hide-checkbox-column
+                                        expanded-rows={expandedRows}>
+                                    </lightning-tree-grid>
+                                </template>
+                                
+                                <template if:false={hasAssets}>
+                                    <div class="slds-text-align_center slds-p-vertical_large">
+                                        <lightning-icon icon-name="utility:asset_object" size="large"></lightning-icon>
+                                        <h3 class="slds-text-heading_medium slds-m-top_medium">No Assets Found</h3>
+                                        <p class="slds-text-body_regular slds-m-top_small">
+                                            This account doesn't have any assets configured.
+                                        </p>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-card>
+                    </div>
+                    
+                    <!-- Right Panel: Compatible Products -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                        <lightning-card title={selectedAssetLabel} icon-name="utility:product">
+                            <div class="slds-p-around_medium">
+                                
+                                <!-- Product Loading State -->
+                                <template if:true={isLoadingProducts}>
+                                    <lightning-spinner alternative-text="Loading products..." size="small"></lightning-spinner>
+                                </template>
+                                
+                                <!-- Compatible Products List -->
+                                <template if:true={hasCompatibleProducts}>
+                                    <template for:each={compatibleProducts} for:item="product">
+                                        <c-product-card
+                                            key={product.productId}
+                                            product={product}
+                                            onaddtocart={handleAddToCart}>
+                                        </c-product-card>
+                                    </template>
+                                </template>
+                                
+                                <!-- No Asset Selected State -->
+                                <template if:false={hasSelectedAsset}>
+                                    <div class="slds-text-align_center slds-p-vertical_large">
+                                        <lightning-icon icon-name="utility:touch_action" size="large"></lightning-icon>
+                                        <h3 class="slds-text-heading_medium slds-m-top_medium">Select an Asset</h3>
+                                        <p class="slds-text-body_regular slds-m-top_small">
+                                            Choose an asset from the left panel to see compatible products and parts.
+                                        </p>
+                                    </div>
+                                </template>
+                                
+                                <!-- No Products Found State -->
+                                <template if:true={hasSelectedAsset}>
+                                    <template if:false={hasCompatibleProducts}>
+                                        <template if:false={isLoadingProducts}>
+                                            <div class="slds-text-align_center slds-p-vertical_large">
+                                                <lightning-icon icon-name="utility:info" size="large"></lightning-icon>
+                                                <h3 class="slds-text-heading_medium slds-m-top_medium">No Compatible Products</h3>
+                                                <p class="slds-text-body_regular slds-m-top_small">
+                                                    No compatible products or parts found for the selected asset.
+                                                </p>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </template>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

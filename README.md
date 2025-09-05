@@ -123,10 +123,11 @@ Healthcare and industrial equipment companies face several challenges in post-pu
 - Create product compatibility framework
 - Build basic tree navigation and product filtering
 
-### Phase 2: Commerce Integration
+### Phase 2: Commerce Integration ✅ COMPLETE
 
-- Integrate with B2B Commerce platform
-- Implement cart functionality
+- ✅ Asset Product Explorer LWC - Interactive component for asset-centric product discovery
+- ✅ B2B Commerce pricing integration via ProductPricingService
+- ✅ Add-to-cart functionality with quantity selection
 
 ### Phase 3: Other Asset-Centric digital experience Use-Cases
 
@@ -227,22 +228,19 @@ sf project deploy start --source-dir force-app/main/default
 sf org assign permset -n Asset_Taxonomy_Manager
 ```
 
-#### 5. Load Test Data
+#### 5. Load Sample Data
 
-The accelerator includes comprehensive test data with hierarchical relationships:
+The accelerator includes sample data files configured for Salesforce Inspector:
 
-```bash
-# Load all test data with proper dependency ordering
-node scripts/load-test-data.js
-```
+- `sample-data/Asset_Categories.csv` - 52 hierarchical medical equipment categories
+- `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
+- `sample-data/Asset_Types.csv` - 12 asset types (specific equipment models)  
+- `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
 
-**📋 For detailed data loading instructions, troubleshooting, and verification steps, see [DATA_LOADING.md](DATA_LOADING.md)**
-
-The script loads:
-- **25 Asset Categories** (medical equipment hierarchy)
-- **31 Products** (parts, consumables, accessories) 
-- **31 Asset Types** (specific equipment models)
-- **69 Asset Type-Product relationships** (compatibility mappings)
+**Key Loading Tips:**
+- Load Asset Categories first, retry failed records 2-3 times until all load successfully
+- CSV headers are configured for Salesforce Inspector lookup format
+- See [DATA_LOADING.md](DATA_LOADING.md) for complete details
 
 ### Verification Steps
 
@@ -256,6 +254,18 @@ sf data query -q "SELECT COUNT() FROM Asset_Type__c"
 
 Then navigate to **App Launcher** → **Asset Management** to explore the loaded data.
 
+### Quick Demo: Asset Product Explorer
+
+After loading sample data, try the interactive Asset Product Explorer:
+
+1. **Navigate to an Account** - Go to any Account record page
+2. **Add the Component** - Edit the page and add "Asset Product Explorer" component
+3. **Configure Settings** - Optionally set webstoreId for B2B Commerce pricing
+4. **Explore Assets** - Select assets in the tree grid to see compatible products
+5. **Add to Cart** - Use quantity controls and add-to-cart functionality
+
+The component demonstrates the core asset-centric commerce workflow with real hierarchical asset data and product compatibility relationships.
+
 ### Troubleshooting
 
 For common issues like org configuration, permissions, or deployment failures, see the comprehensive troubleshooting guide in [DATA_LOADING.md](DATA_LOADING.md).
@@ -265,9 +275,9 @@ For common issues like org configuration, permissions, or deployment failures, s
 Once installation is complete:
 
 1. **Explore the Data Model** - Review the objects and relationships in Setup
-2. **Customize for Your Use Case** - Modify fields and relationships as needed
-3. **Build User Interfaces** - Create Lightning components or Experience Cloud pages
-4. **Integrate with Commerce** - Connect to B2B Commerce or other commerce platforms
+2. **Try the Asset Product Explorer** - Add the LWC component to Account record pages (see [Asset Product Explorer Implementation](ASSET_PRODUCT_EXPLORER_IMPLEMENTATION.md))
+3. **Customize for Your Use Case** - Modify fields and relationships as needed
+4. **Integrate with Commerce** - Configure B2B Commerce webstore settings for full pricing functionality
 5. **Add Business Logic** - Implement custom validation rules and automation
 
 ### Development Workflow
@@ -284,5 +294,29 @@ sf project deploy start --source-dir force-app/main/default
 # Run tests
 sf apex run test --test-level RunLocalTests
 ```
+
+## Key Components
+
+### Data Model
+- **Asset_Category__c** - Hierarchical equipment categorization
+- **Asset_Type__c** - Specific equipment models with compatibility mapping
+- **Asset_Type_Product__c** - Junction for asset-product compatibility
+- **ProductPricingService** - Apex class for B2B Commerce pricing integration
+
+### User Interface Components
+- **Asset Management App** - Custom Lightning app with asset taxonomy objects
+- **Asset Product Explorer LWC** - Interactive component for asset-centric product discovery and cart functionality
+- **Product Card LWC** - Individual product display with pricing and quantity selection
+
+### Integration Services
+- **AssetProductController** - Apex controller providing asset hierarchy and product compatibility data
+- **ProductPricingService** - Commerce ConnectAPI integration for real-time pricing
+
+## Documentation
+
+- [Implementation Summary](IMPLEMENTATION_SUMMARY.md) - Detailed overview of all components and architecture
+- [Data Loading Guide](DATA_LOADING.md) - Sample data loading instructions and troubleshooting
+- [Asset Product Explorer Implementation](ASSET_PRODUCT_EXPLORER_IMPLEMENTATION.md) - LWC component documentation and usage guide
+- [Product Pricing Service](PRODUCT_PRICING_SERVICE.md) - Commerce integration service documentation
 
 This accelerator provides the foundation - customize and extend it to meet your specific business requirements.

@@ -79,13 +79,13 @@ Successfully implemented a comprehensive asset taxonomy system for medtech compa
 - Asset Type: "Magnetom Aera 1.5T ➤ MRI Systems ➤ Medical Imaging ➤ Medical Equipment"
 - Asset: "Main Campus MRI Unit ➤ Magnetom Aera 1.5T ➤ MRI Systems ➤ Medical Imaging"
 
-### 6. Test Data
+### 6. Sample Data
 
 #### Realistic Medtech Data Structure
-- **25 Asset Categories**: Hierarchical structure from Medical > Medical Imaging > specific modalities
-- **31 Asset Types**: Real equipment models (Siemens Magnetom, GE Revolution CT, etc.)
-- **31 Products**: Consumables, parts, and accessories
-- **67 Asset Type Product relationships**: Compatibility mappings
+- **52 Asset Categories**: Hierarchical structure from Medical > Medical Imaging > specific modalities
+- **12 Asset Types**: Real equipment models (Siemens Magnetom, GE Revolution CT, etc.)
+- **38 Products**: Consumables, parts, and accessories
+- **38 Asset Type Product relationships**: Compatibility mappings
 
 ## Data Model Architecture
 
@@ -167,14 +167,15 @@ Product2 ←→ Asset Type (Lookup)
 - 1 Custom Application with 3 custom tabs
 - Extensions to 2 standard objects
 
-### Test Data
-- Asset_Categories.csv (25 hierarchical categories)
-- Asset_Types.csv (31 equipment models)
-- Products.csv (31 consumables and parts)
-- Asset_Type_Products.csv (67 compatibility relationships)
+### Sample Data
+- sample-data/Asset_Categories.csv (52 hierarchical categories)
+- sample-data/Asset_Types.csv (12 equipment models)
+- sample-data/Products.csv (38 consumables and parts)
+- sample-data/Asset_Type_Products.csv (38 compatibility relationships)
 
 ### Documentation
 - General_Instructions.md (Development best practices)
+- DATA_LOADING.md (Sample data loading guide)
 - IMPLEMENTATION_SUMMARY.md (This comprehensive overview)
 
 ## Success Metrics

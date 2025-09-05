@@ -1,0 +1,39 @@
+External Id,Name,Family,Description
+XR_320_XRAY_TUBE,XR-320 X-Ray Tube,X-Ray Parts,Replacement rotating anode x-ray tube compatible with fixed and mobile radiography systems.
+DR_DETECTOR_14X17,DR Flat Panel Detector 14x17,X-Ray Parts,Wireless digital radiography detector
+UNIVERSAL_COLLIMATOR_ASSEMBLY,Universal Collimator Assembly,X-Ray Parts,Multi-leaf collimator with pediatric and adult filtration options.
+CEILING_TUBE_SUSPENSION_RAIL_KIT,Ceiling Tube Suspension Rail Kit,X-Ray Infrastructure,Overhead tube suspension rails and hardware for room install.
+CT_XRAY_TUBE_XT_700,CT X-Ray Tube XT-700,CT Parts,High heat-capacity CT tube for multi-slice scanners.
+CT_DETECTOR_MODULE_DS_128,CT Detector Module DS-128,CT Parts,128-row detector module assembly for MDCT systems.
+CARDIAC_ECG_TRIGGER_MODULE,Cardiac ECG Trigger Module,CT Accessories,Physio gating module for prospective ECG-triggered CT.
+DUAL_ENERGY_CALIBRATION_PHANTOM,Dual-Energy Calibration Phantom,CT QA,Water/iodine phantom for dual-energy CT calibration and QA.
+MRI_RF_COIL_HEAD_NECK_20CH,MRI Head/Neck 20-Ch RF Coil,MRI Coils,20-channel receive-only RF coil for neuro imaging.
+MRI_RF_COIL_SPINE_24CH,MRI Spine 24-Ch RF Coil,MRI Coils,Integrated spine array for supine imaging workflows.
+GRADIENT_AMPLIFIER_GA_45,Gradient Amplifier GA-45,MRI Parts,Replacement gradient amplifier with improved slew rate.
+SAR_MONITORING_UPGRADE_KEY,SAR Monitoring Upgrade Key,MRI Software,Software add-on for advanced SAR monitoring & reporting.
+PET_DETECTOR_BLOCK_PB_64,PET Detector Block PB-64,PET Parts,64-channel LYSO detector block for PET gantry modules.
+SPECT_NAI_TL_CRYSTAL_PACK,SPECT NaI(Tl) Crystal Pack,SPECT Parts,Replacement sodium iodide crystal set for SPECT heads.
+MULTI_HOLE_COLLIMATOR_SET,Multi-Hole Collimator Set,SPECT Accessories,LEHR/LEGP collimators for general SPECT imaging.
+PET_SPECT_CALIBRATION_PHANTOM,PET/SPECT Calibration Phantom,Nuclear Medicine QA,Uniform cylinder phantom for quantitative QC.
+US_LINEAR_PROBE_L12_5,Ultrasound Linear Probe L12-5,Ultrasound Probes,High-frequency linear array for vascular and MSK exams.
+US_CARDIAC_PROBE_P5_1,Ultrasound Cardiac Probe P5-1,Ultrasound Probes,Phased-array transducer for adult cardiac imaging.
+GEL_WARMER_GW_2,Gel Warmer GW-2,Ultrasound Accessories,Two-bottle ultrasound gel warmer
+PACS_GPU_UPGRADE,PACS Workstation GPU Upgrade,Imaging IT,Add-on GPU kit certified for advanced visualization workloads.
+IMAGING_STORAGE_EXPANSION_50TB,Imaging Storage Expansion 50TB,Imaging IT,SAN/NAS expansion for archive tier (50 TB usable).
+EPR_HL7_INTERFACE_LICENSE,EPR HL7 Interface License,Healthcare IT,Add-on license enabling inbound/outbound HL7 feeds.
+LEAD_SHIELDING_PANEL_SET,Lead Shielding Panel Set,Radiation Protection,Mobile lead glass panels for cath/interventional suites.
+CONTRAST_POWER_INJECTOR,Contrast Power Injector,Injector Systems,Dual-syringe high-pressure injector with table mount.
+MRI_CRYOGEN_LIQUID_HELIUM_100L,MRI Cryogen – Liquid Helium (100 L),Consumables,Liquid helium supply for MRI magnets (hospital-grade dewar).
+MRI_CRYOGEN_LIQUID_NITROGEN_50L,MRI Cryogen – Liquid Nitrogen (50 L),Consumables,Liquid nitrogen for ancillary cooling/handling where applicable.
+CT_CONTRAST_SYRINGE_DUAL_200ML,CT Contrast Syringe (Dual-Head 200 ml),Contrast Media Disposables,Contrast Media Disposables
+CT_SALINE_FLUSH_500ML,CT Saline Flush (500 ml),Contrast Media Disposables,Sterile saline flush bag for CT injector.
+XRAY_DETECTOR_WIPES_100PK,X-ray Detector Cleaning Wipes (100-pack),Cleaning,Non-abrasive wipes for flat-panel detectors and housings.
+XRAY_GANTRY_FILTER_SET,X-ray Gantry Air Filter Set,Consumables,Replacement intake/HEPA filters for gantry cabinets.
+US_ULTRASOUND_GEL_5L,Ultrasound Gel (5 L Canister),Consumables,Multi-purpose coupling gel; dispenser-ready.
+PET_SYRINGE_SHIELD_DISPOSABLE_10PK,PET Syringe Shield – Disposable (10-pack),Nuclear Medicine Consumables,Single-use PET syringe radiation shields.
+PET_COLD_PACK_KIT,PET Cold Pack Kit,Nuclear Medicine Consumables,Cold pack kit for dose transport/temperature control.
+MRI_ECG_LEADS_DISPOSABLE_25PK,MRI-Safe ECG Leads – Disposable (25-pack),Patient Prep,Non-ferromagnetic patient ECG leads for MRI.
+CT_HEADREST_COVERS_200PK,CT Headrest Covers (200-pack),Patient Prep,Disposable headrest covers sized for CT tables.
+XRAY_GRID_SLEEVES_50PK,X-ray Grid Protection Sleeves (50-pack),Consumables,Protective sleeves for anti-scatter grids.
+IT_LABEL_ROLLS_ASSET_2IN,"IT Label Rolls – Asset Tracking (2"")",IT Ops,Thermal transfer label rolls for equipment tracking.
+WORKSTATION_WIPES_ESD_100PK,ESD-Safe Workstation Wipes (100-pack),Cleaning,Lint-free wipes for PACS/IT workstations and monitors.

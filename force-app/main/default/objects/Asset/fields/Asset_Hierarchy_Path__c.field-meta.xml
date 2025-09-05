@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Asset_Hierarchy_Path__c</fullName>
     <externalId>false</externalId>
-    <formula>Name + BLANKVALUE(" ➤ " + Asset_Type__r.Type_Hierarchy_Path__c, "")</formula>
+    <formula>Name + BLANKVALUE(" ➡️ " + Asset_Type__r.Type_Hierarchy_Path__c, "")</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Asset Hierarchy Path</label>
     <required>false</required>

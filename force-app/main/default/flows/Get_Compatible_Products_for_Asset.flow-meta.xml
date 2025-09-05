@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <description>Auto-launched flow that takes an Asset record and returns compatible Product2 records based on Asset Type relationships</description>
+    <label>Get Compatible Products for Asset</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <status>Active</status>
+    
+    <!-- ASSIGNMENTS -->
+    <assignments>
+        <description>Extract the Asset Type ID from the input Asset record</description>
+        <name>Get_Asset_Type_ID</name>
+        <label>Get Asset Type ID</label>
+        <locationX>50</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>AssetTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>InputAsset.Asset_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Query_Asset_Type_Products</targetReference>
+        </connector>
+    </assignments>
+    
+    <assignments>
+        <description>Add the Product ID to the collection</description>
+        <name>Add_Product_ID_to_Collection</name>
+        <label>Add Product ID to Collection</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>ProductIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Transform_to_Product_IDs.Product__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Transform_to_Product_IDs</targetReference>
+        </connector>
+    </assignments>
+    
+    <!-- DECISIONS -->
+    <decisions>
+        <description>Check if the input Asset has an Asset Type assigned</description>
+        <name>Check_Asset_Type_Field</name>
+        <label>Check Asset Type Field</label>
+        <locationX>50</locationX>
+        <locationY>158</locationY>
+        <defaultConnectorLabel>No Asset Type</defaultConnectorLabel>
+        <rules>
+            <name>Has_Asset_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>InputAsset.Asset_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Asset_Type_ID</targetReference>
+            </connector>
+            <label>Has Asset Type</label>
+        </rules>
+    </decisions>
+    
+    <decisions>
+        <description>Check if any Asset Type Product records were found</description>
+        <name>Check_Asset_Type_Products_Results</name>
+        <label>Check Asset Type Products Results</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <defaultConnectorLabel>No Product Mappings</defaultConnectorLabel>
+        <rules>
+            <name>Has_Product_Mappings</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AssetTypeProductRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Transform_to_Product_IDs</targetReference>
+            </connector>
+            <label>Has Product Mappings</label>
+        </rules>
+    </decisions>
+    
+    <decisions>
+        <description>Check if Product IDs collection has any values</description>
+        <name>Check_Product_IDs_Collection</name>
+        <label>Check Product IDs Collection</label>
+        <locationX>50</locationX>
+        <locationY>878</locationY>
+        <defaultConnectorLabel>No Valid Product IDs</defaultConnectorLabel>
+        <rules>
+            <name>Has_Product_IDs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProductIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Query_Compatible_Products</targetReference>
+            </connector>
+            <label>Has Product IDs</label>
+        </rules>
+    </decisions>
+    
+    <decisions>
+        <description>Final check if compatible products were found</description>
+        <name>Final_Check_Compatible_Products</name>
+        <label>Final Check Compatible Products</label>
+        <locationX>50</locationX>
+        <locationY>1118</locationY>
+        <defaultConnectorLabel>Products Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Products_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CompatibleProducts</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Products Found</label>
+        </rules>
+    </decisions>
+    
+    <!-- LOOPS -->
+    <loops>
+        <description>Transform Asset Type Product records to extract Product IDs</description>
+        <name>Transform_to_Product_IDs</name>
+        <label>Transform to Product IDs</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <collectionReference>AssetTypeProductRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Product_ID_to_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Product_IDs_Collection</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    
+    <!-- RECORD LOOKUPS -->
+    <recordLookups>
+        <description>Query Asset Type Product records for the given Asset Type</description>
+        <name>Query_Asset_Type_Products</name>
+        <label>Query Asset Type Products</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Asset_Type_Products_Results</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Asset_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AssetTypeId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Asset_Type_Product__c</object>
+        <outputReference>AssetTypeProductRecords</outputReference>
+    </recordLookups>
+    
+    <recordLookups>
+        <description>Query Product2 records using the collected Product IDs</description>
+        <name>Query_Compatible_Products</name>
+        <label>Query Compatible Products</label>
+        <locationX>50</locationX>
+        <locationY>998</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Final_Check_Compatible_Products</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>ProductIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Product2</object>
+        <outputReference>CompatibleProducts</outputReference>
+    </recordLookups>
+    
+    <!-- START -->
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Asset_Type_Field</targetReference>
+        </connector>
+    </start>
+    
+    <!-- VARIABLES -->
+    <variables>
+        <description>Input Asset record to find compatible products for</description>
+        <name>InputAsset</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Asset</objectType>
+    </variables>
+    
+    <variables>
+        <description>Collection of Product2 records compatible with the input Asset</description>
+        <name>CompatibleProducts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Product2</objectType>
+    </variables>
+    
+    <variables>
+        <description>Asset Type ID extracted from the input Asset</description>
+        <name>AssetTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    
+    <variables>
+        <description>Collection of Asset Type Product records</description>
+        <name>AssetTypeProductRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Asset_Type_Product__c</objectType>
+    </variables>
+    
+    <variables>
+        <description>Collection of Product IDs to query</description>
+        <name>ProductIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    
+</Flow>

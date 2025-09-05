@@ -1,0 +1,56 @@
+External_Id__c,Name,Parent_Category__r:Asset_Category__c:External_Id__c,Description__c
+MEDICAL_EQUIPMENT,Medical Equipment,,Top-level category for all capital medical devices and related clinical equipment.
+MEDICAL_IMAGING,Medical Imaging,MEDICAL_EQUIPMENT,All diagnostic imaging modalities and systems used to visualize anatomy and physiology.
+HEALTHCARE_IT,Healthcare IT,MEDICAL_EQUIPMENT,"Health IT platforms supporting imaging, clinical workflow, and enterprise data."
+CLINICAL_WORKFLOW_IT,Clinical / Workflow IT,HEALTHCARE_IT,"Applications that orchestrate clinical workflows, ordering, reporting, and care coordination."
+IMAGING_IT,Imaging IT,HEALTHCARE_IT,"IT systems specific to imaging (PACS, VNA, imaging viewers, dose management, advanced visualization)."
+DIAGNOSTICS_LAB,Diagnostics & Laboratory,MEDICAL_EQUIPMENT,Laboratory analyzers and systems supporting in-vitro diagnostics and clinical lab operations.
+RADIATION_THERAPY,Radiation Therapy,MEDICAL_EQUIPMENT,Equipment used for therapeutic radiation delivery and treatment planning.
+CT,Computer Tomography (CT),MEDICAL_IMAGING,X-ray computed tomography systems for cross-sectional imaging and angiography.
+MRI,Magnetic Resonance Imaging (MRI),MEDICAL_IMAGING,Magnetic resonance systems for soft-tissue imaging using strong magnetic fields and RF.
+XRAY,Radiography (X-Ray),MEDICAL_IMAGING,Conventional and fluoroscopic X-ray systems for projection imaging and interventional procedures.
+ULTRASOUND,Ultrasound Systems,MEDICAL_IMAGING,Diagnostic ultrasound systems for real-time imaging using acoustic waves.
+MOLECULAR_IMAGING,Molecular Imaging,MEDICAL_IMAGING,PET/SPECT and related systems for functional and molecular imaging.
+HEMATOLOGY_SYSTEMS,Hematology Systems,DIAGNOSTICS_LAB,Analyzers and instruments for blood cell counts and morphology.
+IMMUNOLOGY_HEMOSTASIS,Immunology & Hemostasis,DIAGNOSTICS_LAB,"Systems for immunoassays, coagulation, and hemostasis testing."
+CONTRAST_INJECTOR_DUAL,Contrast Power Injector (Dual),CT,Dual-syringe contrast injector for CT contrast delivery.
+PACS_REVIEW_WORKSTATION,PACS Review Workstation,IMAGING_IT,Clinical review workstation for image viewing and basic post-processing.
+ADV_VIZ_WORKSTATION,Advanced Viz Workstation,IMAGING_IT,"Advanced visualization workstation for 3D/4D, MPR/VR, and cardiac tools."
+LEAD_SHIELD_PANEL_MOBILE,Lead Shield Panel (Mobile),XRAY,Mobile radiation protection panel for imaging suites.
+MR_COMPAT_MONITOR,MR-Compatible Patient Monitor,MRI,MR-conditional patient monitoring system for use in the MRI environment.
+CT_DOSE_MGMT_CONSOLE,CT Dose Management Console,IMAGING_IT,IT console/software for CT protocol management and dose analytics.
+HOT_LAB_DOSE_CALIBRATOR,Hot Lab Dose Calibrator,MOLECULAR_IMAGING,Ionization chamber system for PET/SPECT dose measurement in hot labs.
+DETECTOR_CHARGING_STATION,Detector Charging Station,XRAY,Charging/management station for wireless DR detectors.
+ECG_TRIGGER_UNIT,ECG Trigger Unit,MRI,Cardiac gating/trigger device for synchronized MR acquisitions.
+UPS_RACK_IMAGING,UPS Rack (Imaging Suite),MEDICAL_EQUIPMENT,Rack-mounted uninterruptible power system for imaging rooms and IT gear.
+XRAY_PARTS,X-Ray Parts,XRAY,Parts and spares for digital radiography systems.
+XRAY_INFRASTRUCTURE,X-Ray Infrastructure,XRAY,"Overhead rails, stands, and room infrastrucutre"
+CT_PARTS,CT Parts,CT,Replacement parts and spares for CT systems.
+CT_ACCESSORIES,CT Accessories,CT,Peripherals and add-ons for CT workflows.
+CT_QA,CT QA,CT,Quality assurance and calibration tools for CT.
+MRI_COILS,MRI Coils,MRI,Receive-only RF coils and arrays for MRI.
+MRI_PARTS,MRI Parts,MRI,"Electronics and spares for MRI (e.g. gradients, cabinets)"
+MRI_SOFTWARE,MRI Software,MRI,Software options and keys specific to MRI.
+PET_PARTS,PET Parts,MOLECULAR_IMAGING,Detector and gantry spares for PET.
+SPECT_PARTS,SPECT Parts,MOLECULAR_IMAGING,Detector and head spares for SPECT.
+SPECT_ACCESSORIES,SPECT Accessories,MOLECULAR_IMAGING,Collimators and ancillary accessories for SPECT.
+NUCLEAR_MEDICINE_QA,Nuclear Medicine QA,MOLECULAR_IMAGING,Phantoms and QA tools for PET/SPECT.
+ULTRASOUND_PROBES,Ultrasound Probes,ULTRASOUND,Transducers for ultrasound systems.
+ULTRASOUND_ACCESSORIES,Ultrasound Accessories,ULTRASOUND,"Carts, gel warmers, and peripherals"
+CONSUMABLES,Consumables,MEDICAL_SUPPLIES,General supplies consumed in daily operations.
+CONTRAST_MEDIA_DISPOSABLES,Contrast Media Disposables,MEDICAL_SUPPLIES,Disposables for CT injectors and contrast handling.
+NUCLEAR_MEDICINE_CONSUMABLES,Nuclear Medicine Consumables,MEDICAL_SUPPLIES,Single-use items and handling supplies for nuclear medicine.
+PATIENT_PREP,Patient Prep,MEDICAL_SUPPLIES,Disposable items used to prep patients for exams.
+CLEANING,Cleaning,MEDICAL_SUPPLIES,Cleaners and wipes for equipment and IT devices.
+IT_OPS,IT Ops,HEALTHCARE_IT,IT operational supplies (labels media) for clinical environments.
+MEDICAL_SUPPLIES,Medical Supplies,,General category for various medical supplies.
+COMPUTER_TOMOGRAPHY_CT,Computer Tomography (CT),MEDICAL_IMAGING,CT scanners and related subsystems.
+MAGNETIC_RESONANCE_IMAGING_MRI,Magnetic Resonance Imaging (MRI),MEDICAL_IMAGING,MRI systems and related subsystems.
+ULTRASOUND_SYSTEMS,Ultrasound Systems,MEDICAL_IMAGING,Diagnostic ultrasound consoles and probes.
+RADIOGRAPHY_X_RAY,Radiography (X-Ray),MEDICAL_IMAGING,General and fluoroscopic X-ray imaging.
+XRAY_ACCESSORY,X-Ray Accessory,RADIOGRAPHY_X_RAY,"Detectors, chargers, collimation and general X-ray accessories"
+INJECTOR_SYSTEMS,Injector Systems,,Contrast media injector systems and related consoles.
+NUCLEAR_MEDICINE_ACCESSORY,Nuclear Medicine Accessory,MOLECULAR_IMAGING,Hot lab equipment and NM accessories.
+FACILITY_INFRA,Facility Infrastructure,,UPS racks and infrastructure elements for imaging suites.
+RADIATION_PROTECTION,Radiation Protection,RADIATION_THERAPY,"Mobile shields, lead glass panel and protective gear"
+PATIENT_MONITORING,Patient Monitoring,,Bedside and modality-compatible patient monitoring devices.
