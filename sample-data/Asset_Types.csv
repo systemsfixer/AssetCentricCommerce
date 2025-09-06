@@ -11,3 +11,21 @@ SYMBIA_TRUEPOINT_SPECT_CT,Symbia TruePoint SPECT-CT,MOLECULAR_IMAGING,Hybrid SPE
 AXIOM_ICONOS,AXIOM Iconos,XRAY,Fluoroscopy / radiography system for interventional and diagnostic procedures.
 DOCULIVE_EPR,DocuLive (EPR),CLINICAL_WORKFLOW_IT,Electronic patient record and clinical workflow solution.
 SYNGO_IMAGING_XS,Syngo Imaging XS,IMAGING_IT,Imaging IT platform for PACS / reporting and departmental workflow.
+SOMATOM_GO_TOP,SOMATOM go.Top,CT,Entry-level CT scanner for routine diagnostic imaging.
+SOMATOM_EDGE_PLUS,SOMATOM Edge Plus,CT,Mid-range CT system with advanced cardiac capabilities.
+MAGNETOM_3T_SKYRA,MAGNETOM 3T Skyra,MRI,3T MRI system for advanced neurological and body imaging.
+MAGNETOM_3T_PRISMA,MAGNETOM 3T Prisma,MRI,Research-grade 3T MRI with advanced sequences.
+MAGNETOM_7T_TERRA,MAGNETOM 7T Terra,MRI,Ultra-high field 7T MRI for research applications.
+ACUSON_SEQUOIA,Acuson Sequoia,ULTRASOUND,Premium ultrasound system for radiology and cardiology.
+ACUSON_JUNIPER,Acuson Juniper,ULTRASOUND,Compact ultrasound system for point-of-care imaging.
+ACUSON_ORIGIN,Acuson Origin,ULTRASOUND,Shared service ultrasound platform for multiple specialties.
+AXIOM_ARTIS_ZEE,AXIOM Artis zee,XRAY,Interventional angiography system with advanced imaging.
+AXIOM_MULTIX_FUSION,AXIOM Multix Fusion,XRAY,Digital radiography system with tomosynthesis capability.
+YSIO_MAX,YSIO Max,XRAY,Wireless DR system with advanced automation features.
+MOBILETT_ELARA_MAX,Mobilett Elara Max,XRAY,Mobile X-ray system for bedside imaging.
+BIOGRAPH_VISION_PET_CT,Biograph Vision PET/CT,MOLECULAR_IMAGING,Next-generation PET/CT with silicon photomultiplier technology.
+SYMBIA_INTEVO_BOLD,Symbia Intevo Bold,MOLECULAR_IMAGING,SPECT/CT system with advanced quantitative capabilities.
+BIOGRAPH_HORIZON_PET_CT,Biograph Horizon PET/CT,MOLECULAR_IMAGING,Compact PET/CT system for routine oncology imaging.
+SYNGO_VIA_VB40,syngo.via VB40,IMAGING_IT,Advanced visualization platform for multi-modality imaging.
+TEAMPLAY_USAGE,teamplay Usage,IMAGING_IT,Fleet management and utilization analytics platform.
+SYNGO_CARBON_PACS,syngo Carbon PACS,IMAGING_IT,Enterprise PACS solution with AI integration capabilities.

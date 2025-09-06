@@ -37,3 +37,21 @@ CT_HEADREST_COVERS_200PK,CT Headrest Covers (200-pack),Patient Prep,Disposable h
 XRAY_GRID_SLEEVES_50PK,X-ray Grid Protection Sleeves (50-pack),Consumables,Protective sleeves for anti-scatter grids.
 IT_LABEL_ROLLS_ASSET_2IN,"IT Label Rolls – Asset Tracking (2"")",IT Ops,Thermal transfer label rolls for equipment tracking.
 WORKSTATION_WIPES_ESD_100PK,ESD-Safe Workstation Wipes (100-pack),Cleaning,Lint-free wipes for PACS/IT workstations and monitors.
+CT_XRAY_TUBE_XT_900,CT X-Ray Tube XT-900,CT Parts,Ultra-high capacity CT tube for advanced cardiac and trauma imaging.
+CT_DETECTOR_MODULE_DS_192,CT Detector Module DS-192,CT Parts,192-row detector module for wide-coverage CT systems.
+MRI_RF_COIL_BODY_32CH,MRI Body 32-Ch RF Coil,MRI Coils,32-channel body coil for abdominal and thoracic imaging.
+MRI_RF_COIL_KNEE_16CH,MRI Knee 16-Ch RF Coil,MRI Coils,Dedicated knee coil for MSK imaging applications.
+MRI_RF_COIL_CARDIAC_18CH,MRI Cardiac 18-Ch RF Coil,MRI Coils,Specialized cardiac coil for functional heart imaging.
+GRADIENT_AMPLIFIER_GA_80,Gradient Amplifier GA-80,MRI Parts,High-performance gradient amplifier for 3T systems.
+HELIUM_COMPRESSOR_HC_10,Helium Compressor HC-10,MRI Parts,Cryogenic compressor for MRI magnet cooling system.
+US_CONVEX_PROBE_C5_1,Ultrasound Convex Probe C5-1,Ultrasound Probes,Curved array transducer for abdominal imaging.
+US_ENDOCAVITY_PROBE_EC9_5,Ultrasound Endocavity Probe EC9-5,Ultrasound Probes,Endovaginal/endorectal probe for pelvic imaging.
+US_PEDIATRIC_PROBE_L15_7,Ultrasound Pediatric Probe L15-7,Ultrasound Probes,High-frequency linear probe for pediatric applications.
+XRAY_TUBE_XR_450,X-Ray Tube XR-450,X-Ray Parts,High-power rotating anode tube for interventional systems.
+DR_DETECTOR_17X17,DR Flat Panel Detector 17x17,X-Ray Parts,Large format wireless detector for chest imaging.
+FLUOROSCOPY_IMAGE_INTENSIFIER,Fluoroscopy Image Intensifier,X-Ray Parts,9-inch image intensifier for real-time imaging.
+PET_DETECTOR_BLOCK_PB_128,PET Detector Block PB-128,PET Parts,128-channel detector block with improved sensitivity.
+SPECT_CZT_DETECTOR_MODULE,SPECT CZT Detector Module,SPECT Parts,Cadmium zinc telluride detector for cardiac SPECT.
+CONTRAST_INJECTOR_DUAL_HEAD,Contrast Injector Dual-Head,Injector Systems,High-pressure dual-syringe injector for CT/MR.
+PACS_WORKSTATION_DIAGNOSTIC,PACS Diagnostic Workstation,Imaging IT,High-resolution diagnostic reading workstation.
+VNA_STORAGE_MODULE_100TB,VNA Storage Module 100TB,Imaging IT,Vendor-neutral archive storage expansion module.
