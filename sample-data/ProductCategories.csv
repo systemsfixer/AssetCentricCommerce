@@ -1,0 +1,25 @@
+Name,CatalogId,ExternalId,Description,IsNavigational,SortOrder
+X-Ray Parts,0ZSfn0000002o8nGAA,XRAY_PARTS,Replacement parts and components for X-ray imaging systems,true,10
+X-Ray Infrastructure,0ZSfn0000002o8nGAA,XRAY_INFRASTRUCTURE,Infrastructure components and installation hardware for X-ray rooms,true,20
+CT Parts,0ZSfn0000002o8nGAA,CT_PARTS,Replacement parts and components for CT scanners,true,30
+CT Accessories,0ZSfn0000002o8nGAA,CT_ACCESSORIES,Accessories and add-on components for CT systems,true,40
+CT QA,0ZSfn0000002o8nGAA,CT_QA,Quality assurance phantoms and calibration tools for CT,true,50
+MRI Coils,0ZSfn0000002o8nGAA,MRI_COILS,RF coils and receiver arrays for MRI systems,true,60
+MRI Parts,0ZSfn0000002o8nGAA,MRI_PARTS,Replacement parts and components for MRI systems,true,70
+MRI Software,0ZSfn0000002o8nGAA,MRI_SOFTWARE,Software upgrades and licenses for MRI systems,true,80
+PET Parts,0ZSfn0000002o8nGAA,PET_PARTS,Replacement parts and components for PET scanners,true,90
+SPECT Parts,0ZSfn0000002o8nGAA,SPECT_PARTS,Replacement parts and components for SPECT systems,true,100
+SPECT Accessories,0ZSfn0000002o8nGAA,SPECT_ACCESSORIES,Accessories and collimators for SPECT imaging,true,110
+Nuclear Medicine QA,0ZSfn0000002o8nGAA,NUCLEAR_MEDICINE_QA,Quality assurance phantoms for nuclear medicine,true,120
+Nuclear Medicine Consumables,0ZSfn0000002o8nGAA,NUCLEAR_MEDICINE_CONSUMABLES,Disposable supplies for nuclear medicine procedures,true,130
+Ultrasound Probes,0ZSfn0000002o8nGAA,ULTRASOUND_PROBES,Transducers and probes for ultrasound systems,true,140
+Ultrasound Accessories,0ZSfn0000002o8nGAA,ULTRASOUND_ACCESSORIES,Accessories and support equipment for ultrasound,true,150
+Imaging IT,0ZSfn0000002o8nGAA,IMAGING_IT,IT infrastructure and hardware for medical imaging,true,160
+Healthcare IT,0ZSfn0000002o8nGAA,HEALTHCARE_IT,IT solutions and software for healthcare workflows,true,170
+IT Ops,0ZSfn0000002o8nGAA,IT_OPS,Operational IT supplies and maintenance items,true,180
+Radiation Protection,0ZSfn0000002o8nGAA,RADIATION_PROTECTION,Shielding and protection equipment for radiation safety,true,190
+Injector Systems,0ZSfn0000002o8nGAA,INJECTOR_SYSTEMS,Contrast injection systems and related equipment,true,200
+Consumables,0ZSfn0000002o8nGAA,CONSUMABLES,General consumable supplies for medical imaging,true,210
+Contrast Media Disposables,0ZSfn0000002o8nGAA,CONTRAST_MEDIA_DISPOSABLES,Disposable supplies for contrast media procedures,true,220
+Cleaning,0ZSfn0000002o8nGAA,CLEANING,Cleaning supplies and maintenance products,true,230
+Patient Prep,0ZSfn0000002o8nGAA,PATIENT_PREP,Patient preparation supplies and accessories,true,240

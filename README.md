@@ -236,6 +236,8 @@ The accelerator includes sample data files configured for Salesforce Inspector:
 - `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
 - `sample-data/Asset_Types.csv` - 12 asset types (specific equipment models)  
 - `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
+- `sample-data/ProductCategories.csv` - 24 product categories for B2B Commerce catalog
+- `sample-data/ProductCategoryProducts.csv` - 65 product-to-category relationships
 
 **Key Loading Tips:**
 - Load Asset Categories first, retry failed records 2-3 times until all load successfully
