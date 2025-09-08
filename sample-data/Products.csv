@@ -55,3 +55,26 @@ SPECT_CZT_DETECTOR_MODULE,SPECT CZT Detector Module,SPECT Parts,Cadmium zinc tel
 CONTRAST_INJECTOR_DUAL_HEAD,Contrast Injector Dual-Head,Injector Systems,High-pressure dual-syringe injector for CT/MR.
 PACS_WORKSTATION_DIAGNOSTIC,PACS Diagnostic Workstation,Imaging IT,High-resolution diagnostic reading workstation.
 VNA_STORAGE_MODULE_100TB,VNA Storage Module 100TB,Imaging IT,Vendor-neutral archive storage expansion module.
+MRI_TABLE_POSITIONING_MOTOR,MRI Table Positioning Motor,MRI Parts,Replacement motor assembly for MRI patient table positioning system.
+MRI_TABLE_CARBON_FIBER_TOP,MRI Table Carbon Fiber Top,MRI Parts,Replacement carbon fiber table top for MRI patient positioning systems.
+MRI_COIL_CABLE_20CH,20-Channel MRI Coil Cable,MRI Parts,High-density coil cable for 20-channel MRI head and spine coils.
+MRI_COIL_PREAMP_MODULE,MRI Coil Preamplifier Module,MRI Parts,RF preamplifier module for MRI receive coils.
+MRI_COIL_CONNECTOR_KIT,MRI Coil Connector Kit,MRI Parts,Connection hardware kit for MRI RF coils including safety circuits.
+CT_TABLE_DRIVE_BELT,CT Table Drive Belt,CT Parts,Replacement drive belt for CT patient table positioning system.
+CT_TABLE_BRAKE_PAD_SET,CT Table Brake Pad Set,CT Parts,Brake pad assembly for CT patient table safety systems.
+CT_DETECTOR_CALIBRATION_SOURCE,CT Detector Calibration Source,CT Parts,Reference source for CT detector array calibration and QA.
+CT_DETECTOR_SCINTILLATOR_ARRAY,CT Detector Scintillator Array,CT Parts,Replacement scintillator crystal array for CT detector modules.
+CT_COOLING_PUMP_ASSEMBLY,CT Cooling Pump Assembly,CT Parts,Coolant pump for CT gantry thermal management system.
+CT_COOLANT_FILTER_KIT,CT Coolant Filter Kit,CT Parts,Replacement filter set for CT gantry cooling system maintenance.
+PET_TABLE_EXTENSION_MODULE,PET/CT Table Extension Module,PET Parts,Table extension for whole-body PET/CT imaging protocols.
+PET_DETECTOR_CRYSTAL_MODULE,PET Detector Crystal Module,PET Parts,LYSO crystal module for PET detector ring replacement.
+PET_COINCIDENCE_PROCESSOR,PET Coincidence Processor,PET Parts,Digital signal processing module for PET coincidence detection.
+US_LINEAR_PROBE_CRYSTAL_ARRAY,Linear Probe Crystal Array,Ultrasound Parts,Replacement piezoelectric crystal array for linear ultrasound probes.
+US_PHASED_PROBE_CRYSTAL_ARRAY,Phased Probe Crystal Array,Ultrasound Parts,Crystal array assembly for cardiac phased array ultrasound probes.
+US_CONVEX_PROBE_CRYSTAL_ARRAY,Convex Probe Crystal Array,Ultrasound Parts,Curved crystal array for abdominal convex ultrasound probes.
+US_TEE_PROBE_STERILIZATION_KIT,TEE Probe Sterilization Kit,Ultrasound Parts,High-level disinfection kit for transesophageal echo probes.
+US_PROBE_CONNECTOR_REPAIR_KIT,Ultrasound Probe Connector Repair,Ultrasound Parts,Connector replacement kit for ultrasound transducer cables.
+XRAY_DETECTOR_SCINTILLATOR,X-ray Detector Scintillator,X-Ray Parts,Cesium iodide scintillator layer for flat panel X-ray detectors.
+XRAY_DETECTOR_TFT_ARRAY,X-ray Detector TFT Array,X-Ray Parts,Thin film transistor array for digital X-ray detector panels.
+XRAY_DETECTOR_COVER_ASSEMBLY,X-ray Detector Cover Assembly,X-Ray Parts,Protective housing and cover for flat panel X-ray detectors.
+ANGIO_CARM_MOTOR_DRIVE,Angio C-arm Motor Drive,X-Ray Parts,Motor assembly for C-arm positioning and rotation systems.

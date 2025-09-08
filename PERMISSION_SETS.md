@@ -32,6 +32,9 @@ Administrative permission set for users who need to configure and manage the ass
 - **Product2** - Create, read, update, delete products (limited modifyAllRecords)
 - **ProductCategory** - Create, read, update, delete B2B Commerce product categories
 - **ProductCategoryProduct** - Create, read, update, delete category-product relationships
+- **ProductCatalog** - Create, read, update, delete B2B Commerce catalogs
+- **BuyerGroup** - Create, read, update, delete B2B Commerce buyer groups
+- **BuyerGroupMember** - Create, read, update, delete buyer group memberships
 - **Account** - Create, read, update, delete customer accounts
 - **Contact** - Create, read, update, delete customer contacts
 
@@ -84,6 +87,8 @@ Read-only permission set for buyer users who need to browse their assets and fin
 - **Asset_Category\_\_c** - Read access to asset category hierarchy
 - **Asset_Type\_\_c** - Read access to equipment models and specifications
 - **Product2** - Read access to product catalog (record-level security applies)
+- **BuyerGroup** - Read access to B2B Commerce buyer groups (record-level security applies)
+- **BuyerGroupMember** - Read access to buyer group memberships (record-level security applies)
 - **Account** - Read access to customer accounts (record-level security applies)
 - **Contact** - Read access to customer contacts (record-level security applies)
 
@@ -109,6 +114,10 @@ Read-only permission set for buyer users who need to browse their assets and fin
   - `Type_Hierarchy_Path__c` - Full type hierarchy path
 - **Product Fields**:
   - `Asset_Type__c` - Product compatibility information
+- **BuyerGroup Fields**:
+  - `External_Id__c` - External system integration identifier
+- **ProductCatalog Fields**:
+  - `External_Id__c` - External system integration identifier
 
 #### Apex Class Access
 

@@ -180,6 +180,19 @@ Before setting up this accelerator, ensure you have:
 
 3. **Git** for cloning the repository
 
+### Commerce Setup Requirements
+
+⚠️ **IMPORTANT**: Before deploying this accelerator, you must enable B2B Commerce in your Salesforce org.
+
+#### Enable B2B Commerce
+
+1. **In Setup, navigate to**: Setup → Digital Experiences → Settings
+2. **Enable Digital Experiences**: Turn on "Enable Digital Experiences"
+3. **Enable B2B Commerce**: Go to Setup → Commerce → Commerce Settings
+4. **Turn on B2B Commerce**: Enable "B2B Commerce" feature
+
+**Why this is required**: The accelerator includes metadata for B2B Commerce objects (`BuyerGroup`, `ProductCatalog`, `ProductCategory`, `ProductCategoryProduct`). These objects are only available when B2B Commerce is enabled in the org. Deployment will fail without this feature enabled.
+
 ### Installation Steps
 
 #### 1. Clone and Setup Project
@@ -241,18 +254,19 @@ The accelerator includes sample data files configured for Salesforce Inspector:
 
 - `sample-data/Asset_Categories.csv` - 61 hierarchical medical equipment categories (including accessory categories)
 - `sample-data/Asset_Types.csv` - 52 asset types (main equipment + sub-component models)
-- `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
-- `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
+- `sample-data/Products.csv` - 81 products (parts, consumables, accessories, sub-component parts)
+- `sample-data/Asset_Type_Products.csv` - 152 compatibility relationships
 - `sample-data/Accounts.csv` - 12 healthcare organizations (hospitals and medical centers)
 - `sample-data/Assets.csv` - 48 medical equipment assets with hierarchical parent-child relationships
-- `sample-data/ProductCategories.csv` - 24 product categories for B2B Commerce catalog
-- `sample-data/ProductCategoryProducts.csv` - 65 product-to-category relationships
+- `sample-data/ProductCategories.csv` - 30 product categories for B2B Commerce catalog
+- `sample-data/ProductCategoryProducts.csv` - 93 product-to-category relationships
 
 **Key Loading Tips:**
 
 - Load Asset Categories first, retry failed records 2-3 times until all load successfully
 - Load parent Assets before sub-assets (hierarchical relationships)
 - CSV headers are configured for Salesforce Inspector lookup format
+- **For B2B Commerce**: Manually update your BuyerGroup and ProductCatalog records with External_Id\_\_c = "ACC"
 - See [DATA_LOADING.md](DATA_LOADING.md) for complete details
 
 **Sample Asset Hierarchy Examples:**

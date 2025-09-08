@@ -23,3 +23,8 @@ Consumables,0ZSfn0000002o8nGAA,CONSUMABLES,General consumable supplies for medic
 Contrast Media Disposables,0ZSfn0000002o8nGAA,CONTRAST_MEDIA_DISPOSABLES,Disposable supplies for contrast media procedures,true,220
 Cleaning,0ZSfn0000002o8nGAA,CLEANING,Cleaning supplies and maintenance products,true,230
 Patient Prep,0ZSfn0000002o8nGAA,PATIENT_PREP,Patient preparation supplies and accessories,true,240
+MRI Component Parts,0ZSfn0000002o8nGAA,MRI_COMPONENT_PARTS,Parts and components for MRI sub-systems and accessories,true,250
+CT Component Parts,0ZSfn0000002o8nGAA,CT_COMPONENT_PARTS,Parts and components for CT sub-systems and accessories,true,260
+PET Component Parts,0ZSfn0000002o8nGAA,PET_COMPONENT_PARTS,Parts and components for PET/SPECT sub-systems and accessories,true,270
+Ultrasound Component Parts,0ZSfn0000002o8nGAA,US_COMPONENT_PARTS,Parts and components for ultrasound probes and systems,true,280
+X-Ray Component Parts,0ZSfn0000002o8nGAA,XRAY_COMPONENT_PARTS,Parts and components for X-ray detectors and positioning systems,true,290

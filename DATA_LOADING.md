@@ -6,13 +6,13 @@ This project includes sample data files configured for easy loading with Salesfo
 
 - `sample-data/Asset_Categories.csv` - 61 hierarchical medical equipment categories (including accessory categories)
 - `sample-data/Asset_Types.csv` - 52 asset types (main equipment + sub-component models)
-- `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
-- `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
+- `sample-data/Products.csv` - 81 products (parts, consumables, accessories, sub-component parts)
+- `sample-data/Asset_Type_Products.csv` - 152 compatibility relationships
 - `sample-data/Accounts.csv` - 12 healthcare organizations (hospitals and medical centers)
 - `sample-data/Contacts.csv` - 36 healthcare contacts across all hospitals
 - `sample-data/Assets.csv` - 48 medical equipment assets with hierarchical parent-child relationships
-- `sample-data/ProductCategories.csv` - 24 product categories for B2B Commerce catalog
-- `sample-data/ProductCategoryProducts.csv` - 65 product-to-category relationships
+- `sample-data/ProductCategories.csv` - 30 product categories for B2B Commerce catalog
+- `sample-data/ProductCategoryProducts.csv` - 93 product-to-category relationships
 
 ## Loading with Salesforce Inspector
 
@@ -51,16 +51,35 @@ The CSV files are configured with column headers that match Salesforce Inspector
 9. **Product Category Products** - Load `ProductCategoryProducts.csv` to `ProductCategoryProduct` object
    - **Note**: Links products to categories with primary/secondary relationships
 
+### B2B Commerce Configuration (Optional)
+
+If you need to configure B2B Commerce buyer groups and catalogs:
+
+10. **Update BuyerGroup External ID** - Manually update your existing BuyerGroup record
+    - **Action**: Edit the BuyerGroup record created with your B2B Commerce store
+    - **Set External_Id\_\_c = "ACC"**
+    - Use this for environment-portable buyer group references in BuyerGroupMembers.csv
+
+11. **Update ProductCatalog External ID** - Manually update your existing ProductCatalog record
+    - **Action**: Edit the ProductCatalog record created with your B2B Commerce store
+    - **Set External_Id\_\_c = "ACC"**
+    - Use this for environment-portable catalog references
+
+12. **BuyerGroup Members** - Load `BuyerGroupMembers.csv` to `BuyerGroupMember` object
+    - **Note**: Associates all 12 healthcare accounts with the "ACC" buyer group
+    - Uses External ID lookups for both BuyerGroup and Account relationships
+    - **Load after** updating BuyerGroup and Account External IDs manually
+
 ### Expected Record Counts
 
 - Asset Categories: 61 (56 main categories + 5 accessory categories)
 - Asset Types: 52 (31 main equipment + 21 sub-component types)
-- Products: 38
-- Asset Type Products: 38
+- Products: 81 (57 original + 24 sub-component parts)
+- Asset Type Products: 152 (121 original + 31 new sub-component relationships)
 - Accounts: 12
 - Contacts: 36
 - Assets: 48 (25 parent assets + 23 sub-assets)
-- Product Categories: 24
-- Product Category Products: 65
+- Product Categories: 30 (25 original + 5 component part categories)
+- Product Category Products: 93 (69 original + 24 new sub-component relationships)
 
 The hierarchical retry process for Asset Categories is the key to successful loading - parent categories must exist before child categories can be created.
