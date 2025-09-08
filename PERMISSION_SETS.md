@@ -86,6 +86,8 @@ Read-only permission set for buyer users who need to browse their assets and fin
 - **Asset Fields**:
   - `Asset_Type__c` - Equipment type assignment
   - `Asset_Hierarchy_Path__c` - Full hierarchy visualization
+  - `External_Id__c` - External system integration identifier
+  - `Status` - Asset status (Active, Inactive, etc.)
 - **Asset Category Fields**:
   - `Description__c` - Category descriptions
   - `Parent_Category__c` - Hierarchy relationships
