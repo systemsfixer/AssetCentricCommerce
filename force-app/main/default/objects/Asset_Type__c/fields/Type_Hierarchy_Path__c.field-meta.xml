@@ -3,7 +3,7 @@
     <fullName>Type_Hierarchy_Path__c</fullName>
     <externalId>false</externalId>
     <formula
-  >Name + BLANKVALUE(" ➡️ " + Asset_Category__r.Category_Hierarchy_Path__c, "")</formula>
+  >Name + BLANKVALUE(&quot; ➡️ &quot; + Asset_Category__r.Category_Hierarchy_Path__c, &quot;&quot;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Type Hierarchy Path</label>
     <required>false</required>

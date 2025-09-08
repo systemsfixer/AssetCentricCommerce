@@ -3,12 +3,11 @@
     <fullName>Asset_Hierarchy_Path__c</fullName>
     <externalId>false</externalId>
     <formula
-  >Name + BLANKVALUE(" ➡️ " + Asset_Type__r.Type_Hierarchy_Path__c, "")</formula>
+  >Name + BLANKVALUE(&quot; ➡️ &quot; + Asset_Type__r.Type_Hierarchy_Path__c, &quot;&quot;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Asset Hierarchy Path</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
-    <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>
 </CustomField>

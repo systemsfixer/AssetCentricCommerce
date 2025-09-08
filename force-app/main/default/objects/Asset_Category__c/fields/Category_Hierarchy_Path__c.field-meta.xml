@@ -3,11 +3,11 @@
     <fullName>Category_Hierarchy_Path__c</fullName>
     <externalId>false</externalId>
     <formula>Name + 
-IF(ISBLANK(Parent_Category__r.Name), "", " ➡️ " + Parent_Category__r.Name) +
-IF(ISBLANK(Parent_Category__r.Parent_Category__r.Name), "", " ➡️ " + Parent_Category__r.Parent_Category__r.Name) +
-IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), "", " ➡️ " + Parent_Category__r.Parent_Category__r.Parent_Category__r.Name) +
-IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), "", " ➡️ " + Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name) +
-IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), "", " ➡️ " + Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name)</formula>
+IF(ISBLANK(Parent_Category__r.Name), &quot;&quot;, &quot; ➡️ &quot; + Parent_Category__r.Name) +
+IF(ISBLANK(Parent_Category__r.Parent_Category__r.Name), &quot;&quot;, &quot; ➡️ &quot; + Parent_Category__r.Parent_Category__r.Name) +
+IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), &quot;&quot;, &quot; ➡️ &quot; + Parent_Category__r.Parent_Category__r.Parent_Category__r.Name) +
+IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), &quot;&quot;, &quot; ➡️ &quot; + Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name) +
+IF(ISBLANK(Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name), &quot;&quot;, &quot; ➡️ &quot; + Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Parent_Category__r.Name)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Category Hierarchy Path</label>
     <required>false</required>
