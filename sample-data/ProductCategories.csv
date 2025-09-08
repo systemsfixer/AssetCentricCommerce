@@ -1,4 +1,4 @@
-Name,CatalogId,ExternalId,Description,IsNavigational,SortOrder
+Name,CatalogId,External_Id__c,Description,IsNavigational,SortOrder
 X-Ray Parts,0ZSfn0000002o8nGAA,XRAY_PARTS,Replacement parts and components for X-ray imaging systems,true,10
 X-Ray Infrastructure,0ZSfn0000002o8nGAA,XRAY_INFRASTRUCTURE,Infrastructure components and installation hardware for X-ray rooms,true,20
 CT Parts,0ZSfn0000002o8nGAA,CT_PARTS,Replacement parts and components for CT scanners,true,30

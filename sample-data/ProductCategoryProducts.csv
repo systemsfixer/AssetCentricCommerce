@@ -1,4 +1,4 @@
-Product__r:Product2:External_Id__c,ProductCategory__r:ProductCategory:ExternalId,IsPrimaryCategory,ExternalId
+Product__r:Product2:External_Id__c,ProductCategory__r:ProductCategory:External_Id__c,IsPrimaryCategory,External_Id__c
 XR_320_XRAY_TUBE,XRAY_PARTS,true,XR_320_XRAY_TUBE|XRAY_PARTS
 DR_DETECTOR_14X17,XRAY_PARTS,true,DR_DETECTOR_14X17|XRAY_PARTS
 DR_DETECTOR_17X17,XRAY_PARTS,true,DR_DETECTOR_17X17|XRAY_PARTS
