@@ -162,15 +162,17 @@ This accelerator establishes the business foundation for asset-centric commerce:
 Before setting up this accelerator, ensure you have:
 
 1. **Salesforce CLI** installed and configured
+
    ```bash
    # Install Salesforce CLI
    npm install -g @salesforce/cli
-   
+
    # Verify installation
    sf --version
    ```
 
 2. **Node.js** (version 12 or higher)
+
    ```bash
    node --version
    npm --version
@@ -194,6 +196,7 @@ npm install
 #### 2. Salesforce Org Setup
 
 **Option A: Create New Scratch Org (Recommended for Testing)**
+
 ```bash
 # Create scratch org
 sf org create scratch -f config/project-scratch-def.json -a asset-commerce-scratch
@@ -203,6 +206,7 @@ sf config set target-org asset-commerce-scratch
 ```
 
 **Option B: Use Existing Org/Sandbox**
+
 ```bash
 # Login to your org
 sf org login web -a my-org-alias
@@ -234,12 +238,13 @@ The accelerator includes sample data files configured for Salesforce Inspector:
 
 - `sample-data/Asset_Categories.csv` - 52 hierarchical medical equipment categories
 - `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
-- `sample-data/Asset_Types.csv` - 12 asset types (specific equipment models)  
+- `sample-data/Asset_Types.csv` - 12 asset types (specific equipment models)
 - `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
 - `sample-data/ProductCategories.csv` - 24 product categories for B2B Commerce catalog
 - `sample-data/ProductCategoryProducts.csv` - 65 product-to-category relationships
 
 **Key Loading Tips:**
+
 - Load Asset Categories first, retry failed records 2-3 times until all load successfully
 - CSV headers are configured for Salesforce Inspector lookup format
 - See [DATA_LOADING.md](DATA_LOADING.md) for complete details
@@ -302,17 +307,20 @@ sf apex run test --test-level RunLocalTests
 ## Key Components
 
 ### Data Model
-- **Asset_Category__c** - Hierarchical equipment categorization
-- **Asset_Type__c** - Specific equipment models with compatibility mapping
-- **Asset_Type_Product__c** - Junction for asset-product compatibility
+
+- **Asset_Category\_\_c** - Hierarchical equipment categorization
+- **Asset_Type\_\_c** - Specific equipment models with compatibility mapping
+- **Asset_Type_Product\_\_c** - Junction for asset-product compatibility
 - **ProductPricingService** - Apex class for B2B Commerce pricing integration
 
 ### User Interface Components
+
 - **Asset Management App** - Custom Lightning app with asset taxonomy objects
 - **Asset Product Explorer LWC** - Interactive component for asset-centric product discovery and cart functionality
 - **Product Card LWC** - Individual product display with pricing and quantity selection
 
 ### Integration Services
+
 - **AssetProductController** - Apex controller providing asset hierarchy and product compatibility data
 - **ProductPricingService** - Commerce ConnectAPI integration for real-time pricing
 

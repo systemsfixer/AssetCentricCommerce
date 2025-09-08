@@ -1,110 +1,129 @@
 <template>
-    <article class="slds-card slds-m-bottom_small product-card">
-        <div class="slds-card__header slds-grid slds-grid_align-spread">
-            <header class="slds-media slds-media_center slds-has-flexi-truncate">
-                <div class="slds-media__figure">
-                    <lightning-icon 
-                        icon-name={productFamilyIcon} 
-                        size="small"
-                        variant={productFamilyVariant}>
-                    </lightning-icon>
-                </div>
-                <div class="slds-media__body">
-                    <h2 class="slds-card__header-title">
-                        <span class="slds-text-heading_small slds-truncate" title={productName}>
-                            {productName}
-                        </span>
-                    </h2>
-                    <template if:true={productFamily}>
-                        <p class="slds-text-body_small slds-text-color_weak">
-                            {productFamily}
-                        </p>
-                    </template>
-                </div>
-            </header>
-            <div class="slds-no-flex price-section">
-                <template if:true={hasPrice}>
-                    <div class="slds-text-align_right">
-                        <p class="slds-text-heading_medium price-display">
-                            {formattedPrice}
-                        </p>
-                        <p class="slds-text-body_small slds-text-color_weak">
-                            per unit
-                        </p>
-                    </div>
-                </template>
-                <template if:false={hasPrice}>
-                    <div class="slds-text-align_right">
-                        <p class="slds-text-body_regular slds-text-color_weak">
-                            Contact for pricing
-                        </p>
-                    </div>
-                </template>
-            </div>
+  <article class="slds-card slds-m-bottom_small product-card">
+    <div class="slds-card__header slds-grid slds-grid_align-spread">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <lightning-icon
+            icon-name={productFamilyIcon}
+            size="small"
+            variant={productFamilyVariant}
+          >
+          </lightning-icon>
         </div>
-        
-        <div class="slds-card__body slds-card__body_inner">
-            <template if:true={productDescription}>
-                <p class="slds-text-body_regular slds-m-bottom_medium description-text">
-                    {productDescription}
-                </p>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <span
+              class="slds-text-heading_small slds-truncate"
+              title={productName}
+            >
+              {productName}
+            </span>
+          </h2>
+          <template if:true={productFamily}>
+            <p class="slds-text-body_small slds-text-color_weak">
+              {productFamily}
+            </p>
+          </template>
+        </div>
+      </header>
+      <div class="slds-no-flex price-section">
+        <template if:true={hasPrice}>
+          <div class="slds-text-align_right">
+            <p class="slds-text-heading_medium price-display">
+              {formattedPrice}
+            </p>
+            <p class="slds-text-body_small slds-text-color_weak">per unit</p>
+          </div>
+        </template>
+        <template if:false={hasPrice}>
+          <div class="slds-text-align_right">
+            <p class="slds-text-body_regular slds-text-color_weak">
+              Contact for pricing
+            </p>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <template if:true={productDescription}>
+        <p class="slds-text-body_regular slds-m-bottom_medium description-text">
+          {productDescription}
+        </p>
+      </template>
+
+      <!-- Quantity and Add to Cart Controls -->
+      <div
+        class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center"
+      >
+        <div class="slds-col slds-no-flex">
+          <div class="slds-form-element">
+            <label
+              class="slds-form-element__label slds-text-body_small"
+              for="quantity-input"
+            >
+              Quantity
+            </label>
+            <div class="slds-form-element__control">
+              <div
+                class="slds-input-has-icon slds-input-has-icon_left-right quantity-control"
+              >
+                <button
+                  class="slds-button slds-button_icon slds-input__icon slds-input__icon_left quantity-button"
+                  onclick={handleDecreaseQuantity}
+                  disabled={isMinQuantity}
+                  title="Decrease quantity"
+                >
+                  <lightning-icon
+                    icon-name="utility:dash"
+                    size="x-small"
+                  ></lightning-icon>
+                </button>
+
+                <input
+                  id="quantity-input"
+                  class="slds-input quantity-input"
+                  type="number"
+                  min="1"
+                  max="999"
+                  value={quantity}
+                  onchange={handleQuantityChange}
+                />
+
+                <button
+                  class="slds-button slds-button_icon slds-input__icon slds-input__icon_right quantity-button"
+                  onclick={handleIncreaseQuantity}
+                  disabled={isMaxQuantity}
+                  title="Increase quantity"
+                >
+                  <lightning-icon
+                    icon-name="utility:add"
+                    size="x-small"
+                  ></lightning-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-col slds-no-flex">
+          <div class="slds-text-align_right">
+            <template if:true={showTotalPrice}>
+              <p class="slds-text-body_small slds-m-bottom_x-small">
+                Total: <strong>{formattedTotalPrice}</strong>
+              </p>
             </template>
-            
-            <!-- Quantity and Add to Cart Controls -->
-            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
-                <div class="slds-col slds-no-flex">
-                    <div class="slds-form-element">
-                        <label class="slds-form-element__label slds-text-body_small" for="quantity-input">
-                            Quantity
-                        </label>
-                        <div class="slds-form-element__control">
-                            <div class="slds-input-has-icon slds-input-has-icon_left-right quantity-control">
-                                <button 
-                                    class="slds-button slds-button_icon slds-input__icon slds-input__icon_left quantity-button"
-                                    onclick={handleDecreaseQuantity}
-                                    disabled={isMinQuantity}
-                                    title="Decrease quantity">
-                                    <lightning-icon icon-name="utility:dash" size="x-small"></lightning-icon>
-                                </button>
-                                
-                                <input 
-                                    id="quantity-input"
-                                    class="slds-input quantity-input"
-                                    type="number"
-                                    min="1"
-                                    max="999"
-                                    value={quantity}
-                                    onchange={handleQuantityChange} />
-                                
-                                <button 
-                                    class="slds-button slds-button_icon slds-input__icon slds-input__icon_right quantity-button"
-                                    onclick={handleIncreaseQuantity}
-                                    disabled={isMaxQuantity}
-                                    title="Increase quantity">
-                                    <lightning-icon icon-name="utility:add" size="x-small"></lightning-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slds-col slds-no-flex">
-                    <div class="slds-text-align_right">
-                        <template if:true={showTotalPrice}>
-                            <p class="slds-text-body_small slds-m-bottom_x-small">
-                                Total: <strong>{formattedTotalPrice}</strong>
-                            </p>
-                        </template>
-                        
-                        <lightning-button
-                            variant="brand"
-                            label="Add to Cart"
-                            onclick={handleAddToCart}
-                            icon-name="utility:shopping_cart">
-                        </lightning-button>
-                    </div>
-                </div>
-            </div>
+
+            <lightning-button
+              variant="brand"
+              label="Add to Cart"
+              onclick={handleAddToCart}
+              icon-name="utility:shopping_cart"
+            >
+            </lightning-button>
+          </div>
         </div>
-    </article>
+      </div>
+    </div>
+  </article>
 </template>

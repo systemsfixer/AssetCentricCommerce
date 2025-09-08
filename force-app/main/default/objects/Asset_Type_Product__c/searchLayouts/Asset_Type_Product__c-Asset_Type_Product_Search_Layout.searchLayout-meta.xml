@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <SearchLayout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customTabListAdditionalFields>Asset_Type__c</customTabListAdditionalFields>
     <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
@@ -9,8 +9,10 @@
     <lookupDialogsAdditionalFields>Asset_Type__c</lookupDialogsAdditionalFields>
     <lookupDialogsAdditionalFields>Product__c</lookupDialogsAdditionalFields>
     <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
-    <lookupPhoneDialogsAdditionalFields>Asset_Type__c</lookupPhoneDialogsAdditionalFields>
-    <lookupPhoneDialogsAdditionalFields>Product__c</lookupPhoneDialogsAdditionalFields>
+    <lookupPhoneDialogsAdditionalFields
+  >Asset_Type__c</lookupPhoneDialogsAdditionalFields>
+    <lookupPhoneDialogsAdditionalFields
+  >Product__c</lookupPhoneDialogsAdditionalFields>
     <searchFilterFields>NAME</searchFilterFields>
     <searchFilterFields>Asset_Type__c</searchFilterFields>
     <searchFilterFields>Product__c</searchFilterFields>
@@ -19,5 +21,6 @@
     <searchResultsAdditionalFields>Asset_Type__c</searchResultsAdditionalFields>
     <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
     <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
-    <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+    <searchResultsAdditionalFields
+  >CREATEDBY_USER</searchResultsAdditionalFields>
 </SearchLayout>

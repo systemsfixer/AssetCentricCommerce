@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
-    <description>Auto-launched flow that takes an Asset record and returns compatible Product2 records based on Asset Type relationships</description>
+    <description
+  >Auto-launched flow that takes an Asset record and returns compatible Product2 records based on Asset Type relationships</description>
     <label>Get Compatible Products for Asset</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -20,7 +21,8 @@
     
     <!-- ASSIGNMENTS -->
     <assignments>
-        <description>Extract the Asset Type ID from the input Asset record</description>
+        <description
+    >Extract the Asset Type ID from the input Asset record</description>
         <name>Get_Asset_Type_ID</name>
         <label>Get Asset Type ID</label>
         <locationX>50</locationX>
@@ -47,7 +49,8 @@
             <assignToReference>ProductIds</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Transform_to_Product_IDs.Product__c</elementReference>
+                <elementReference
+        >Transform_to_Product_IDs.Product__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -57,7 +60,8 @@
     
     <!-- DECISIONS -->
     <decisions>
-        <description>Check if the input Asset has an Asset Type assigned</description>
+        <description
+    >Check if the input Asset has an Asset Type assigned</description>
         <name>Check_Asset_Type_Field</name>
         <label>Check Asset Type Field</label>
         <locationX>50</locationX>
@@ -67,7 +71,8 @@
             <name>Has_Asset_Type</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>InputAsset.Asset_Type__c</leftValueReference>
+                <leftValueReference
+        >InputAsset.Asset_Type__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -81,7 +86,8 @@
     </decisions>
     
     <decisions>
-        <description>Check if any Asset Type Product records were found</description>
+        <description
+    >Check if any Asset Type Product records were found</description>
         <name>Check_Asset_Type_Products_Results</name>
         <label>Check Asset Type Products Results</label>
         <locationX>50</locationX>
@@ -105,7 +111,8 @@
     </decisions>
     
     <decisions>
-        <description>Check if Product IDs collection has any values</description>
+        <description
+    >Check if Product IDs collection has any values</description>
         <name>Check_Product_IDs_Collection</name>
         <label>Check Product IDs Collection</label>
         <locationX>50</locationX>
@@ -151,7 +158,8 @@
     
     <!-- LOOPS -->
     <loops>
-        <description>Transform Asset Type Product records to extract Product IDs</description>
+        <description
+    >Transform Asset Type Product records to extract Product IDs</description>
         <name>Transform_to_Product_IDs</name>
         <label>Transform to Product IDs</label>
         <locationX>50</locationX>
@@ -168,12 +176,14 @@
     
     <!-- RECORD LOOKUPS -->
     <recordLookups>
-        <description>Query Asset Type Product records for the given Asset Type</description>
+        <description
+    >Query Asset Type Product records for the given Asset Type</description>
         <name>Query_Asset_Type_Products</name>
         <label>Query Asset Type Products</label>
         <locationX>50</locationX>
         <locationY>398</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+    >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Asset_Type_Products_Results</targetReference>
         </connector>
@@ -191,12 +201,14 @@
     </recordLookups>
     
     <recordLookups>
-        <description>Query Product2 records using the collected Product IDs</description>
+        <description
+    >Query Product2 records using the collected Product IDs</description>
         <name>Query_Compatible_Products</name>
         <label>Query Compatible Products</label>
         <locationX>50</locationX>
         <locationY>998</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound
+    >false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Final_Check_Compatible_Products</targetReference>
         </connector>
@@ -224,7 +236,8 @@
     
     <!-- VARIABLES -->
     <variables>
-        <description>Input Asset record to find compatible products for</description>
+        <description
+    >Input Asset record to find compatible products for</description>
         <name>InputAsset</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
@@ -234,7 +247,8 @@
     </variables>
     
     <variables>
-        <description>Collection of Product2 records compatible with the input Asset</description>
+        <description
+    >Collection of Product2 records compatible with the input Asset</description>
         <name>CompatibleProducts</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>

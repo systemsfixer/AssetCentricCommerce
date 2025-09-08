@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Asset_Management</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <description>Full access to Asset Taxonomy objects for managing asset categories, types, and product relationships</description>
+    <description
+  >Full access to Asset Taxonomy objects for managing asset categories, types, and product relationships</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Asset Taxonomy Manager</label>
     <objectPermissions>
