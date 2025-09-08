@@ -6,6 +6,8 @@
         <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
@@ -19,6 +21,11 @@
             <property name="recordId" type="String" label="Account ID" description="Account ID to display assets for" />
             <property name="webstoreName" type="String" label="Webstore Name" description="B2B Commerce Webstore Name for pricing (environment portable)" />
             <property name="effectiveAccountId" type="String" label="Effective Account ID" description="Account ID for pricing context" />
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Account ID" description="Account ID to display assets for (optional - auto-detects user account)" />
+            <property name="webstoreName" type="String" label="Webstore Name" description="B2B Commerce Webstore Name for pricing" />
+            <property name="effectiveAccountId" type="String" label="Effective Account ID" description="Account ID for pricing context (optional)" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

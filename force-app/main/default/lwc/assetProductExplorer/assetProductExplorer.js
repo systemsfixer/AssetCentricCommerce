@@ -1,5 +1,8 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import Id from '@salesforce/user/Id';
+import CONTACT_ACCOUNT_ID from '@salesforce/schema/User.Contact.AccountId';
 import getAccountAssets from '@salesforce/apex/AssetProductController.getAccountAssets';
 import getCompatibleProductsWithStoreName from '@salesforce/apex/AssetProductController.getCompatibleProductsWithStoreName';
 
@@ -49,13 +52,41 @@ export default class AssetProductExplorer extends LightningElement {
     
     treeColumns = TREE_COLUMNS;
     
+    // Wire to get current user's account context in B2B Commerce
+    @wire(getRecord, { recordId: Id, fields: [CONTACT_ACCOUNT_ID] })
+    currentUser;
+    
     connectedCallback() {
         if (this.recordId) {
             this.loadAssets();
         }
     }
     
-    @wire(getAccountAssets, { accountId: '$recordId' })
+    renderedCallback() {
+        // Reload assets if effective record ID becomes available
+        if (this.effectiveRecordId && this.assetData.length === 0 && !this.isLoading) {
+            this.loadAssets();
+        }
+    }
+    
+    get effectiveRecordId() {
+        // Priority: recordId property > current user's account > null
+        if (this.recordId) {
+            return this.recordId;
+        }
+        
+        // In B2B Commerce, get account from current user's contact
+        if (this.currentUser && this.currentUser.data) {
+            const userAccountId = getFieldValue(this.currentUser.data, CONTACT_ACCOUNT_ID);
+            if (userAccountId) {
+                return userAccountId;
+            }
+        }
+        
+        return null;
+    }
+    
+    @wire(getAccountAssets, { accountId: '$effectiveRecordId' })
     wiredAssets({ error, data }) {
         if (data) {
             this.assetData = this.processAssetData(data);
@@ -63,7 +94,9 @@ export default class AssetProductExplorer extends LightningElement {
         } else if (error) {
             this.error = error;
             this.assetData = [];
-            this.showToast('Error', 'Error loading assets: ' + error.body.message, 'error');
+            if (error.body && error.body.message) {
+                this.showToast('Error', 'Error loading assets: ' + error.body.message, 'error');
+            }
         }
     }
     
@@ -107,15 +140,18 @@ export default class AssetProductExplorer extends LightningElement {
     }
     
     async loadAssets() {
-        if (!this.recordId) return;
+        const accountId = this.effectiveRecordId;
+        if (!accountId) return;
         
         this.isLoading = true;
         try {
-            const result = await getAccountAssets({ accountId: this.recordId });
+            const result = await getAccountAssets({ accountId: accountId });
             this.assetData = this.processAssetData(result);
         } catch (error) {
             this.error = error;
-            this.showToast('Error', 'Error loading assets: ' + error.body.message, 'error');
+            if (error.body && error.body.message) {
+                this.showToast('Error', 'Error loading assets: ' + error.body.message, 'error');
+            }
         } finally {
             this.isLoading = false;
         }
@@ -129,7 +165,7 @@ export default class AssetProductExplorer extends LightningElement {
             const result = await getCompatibleProductsWithStoreName({
                 assetId: this.selectedAssetId,
                 webstoreName: this.webstoreName,
-                effectiveAccountId: this.effectiveAccountId || this.recordId
+                effectiveAccountId: this.effectiveAccountId || this.effectiveRecordId
             });
             
             this.compatibleProducts = result || [];
