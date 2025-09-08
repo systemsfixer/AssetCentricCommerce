@@ -4,6 +4,14 @@
         <application>Asset_Management</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>AssetProductController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ProductPricingService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description
   >Full access to Asset Taxonomy objects for managing asset categories, types, and product relationships</description>
     <fieldPermissions>

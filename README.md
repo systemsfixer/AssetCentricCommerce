@@ -228,8 +228,11 @@ sf project deploy start --source-dir force-app/main/default
 #### 4. Assign Permissions
 
 ```bash
-# Assign the Asset Taxonomy Manager permission set
+# Assign the Asset Taxonomy Manager permission set (for administrators)
 sf org assign permset -n Asset_Taxonomy_Manager
+
+# Assign the ACC Buyer permission set (for buyer users)
+sf org assign permset -n ACC_Buyer
 ```
 
 #### 5. Load Sample Data
@@ -321,12 +324,18 @@ sf apex run test --test-level RunLocalTests
 
 ### Integration Services
 
-- **AssetProductController** - Apex controller providing asset hierarchy and product compatibility data
-- **ProductPricingService** - Commerce ConnectAPI integration for real-time pricing
+- **AssetProductController** - Apex controller providing asset hierarchy and product compatibility data with tree navigation and webstore integration
+- **ProductPricingService** - Commerce ConnectAPI integration for real-time pricing with fallback to standard pricebooks
+
+### Security Model
+
+- **Asset Taxonomy Manager** - Full administrative access to all custom objects and Apex classes
+- **ACC Buyer** - Read-only access for buyer users to browse assets and compatible products
 
 ## Documentation
 
 - [Implementation Summary](IMPLEMENTATION_SUMMARY.md) - Detailed overview of all components and architecture
+- [Permission Sets Guide](PERMISSION_SETS.md) - Security model, permission sets, and user access documentation
 - [Data Loading Guide](DATA_LOADING.md) - Sample data loading instructions and troubleshooting
 - [Asset Product Explorer Implementation](ASSET_PRODUCT_EXPLORER_IMPLEMENTATION.md) - LWC component documentation and usage guide
 - [Product Pricing Service](PRODUCT_PRICING_SERVICE.md) - Commerce integration service documentation

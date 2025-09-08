@@ -53,7 +53,17 @@ Successfully implemented a comprehensive asset taxonomy system for medtech compa
 
 - Full CRUD access to all custom objects
 - Field-level security for all custom fields
+- Apex class access: AssetProductController, ProductPricingService
+- Intended for administrators and asset managers
 - Excludes Master-Detail fields (automatically inherit permissions)
+
+#### ACC Buyer Permission Set
+
+- Read-only access to Asset, Asset_Category**c, Asset_Type**c, and Product2 objects
+- Read access to all relevant fields for asset-centric commerce
+- Apex class access: AssetProductController, ProductPricingService
+- Intended for buyer users who need to browse and purchase compatible products
+- Follows principle of least privilege for commerce scenarios
 
 ### 4. User Interface
 
@@ -70,7 +80,29 @@ Successfully implemented a comprehensive asset taxonomy system for medtech compa
 - Asset Types tab with hierarchy icon
 - Asset Type Products tab with link icon
 
-### 5. Hierarchy Formula Fields
+### 5. Apex Classes
+
+#### AssetProductController
+
+- **Purpose**: Controller for Asset-Product LWC components
+- **Key Methods**:
+  - `getAccountAssets()`: Retrieves hierarchical asset tree for an account
+  - `getCompatibleProductsWithStoreName()`: Gets compatible products with B2B Commerce pricing
+  - `getWebstoreId()`: Resolves webstore name to ID for environment portability
+- **Features**: Tree-based asset navigation, product compatibility mapping, pricing integration
+- **Security**: Uses `with sharing` for proper record-level security
+
+#### ProductPricingService
+
+- **Purpose**: B2B Commerce pricing integration using Connect API
+- **Key Features**:
+  - Invocable method for Flow integration
+  - Dynamic Connect API calls for B2B Commerce pricing
+  - Fallback to standard pricebook when Connect API unavailable
+  - Support for bulk product pricing operations
+- **Integration**: Designed to work with or without B2B Commerce licensing
+
+### 6. Hierarchy Formula Fields
 
 #### User-Friendly Path Visualization
 
@@ -187,7 +219,8 @@ Product2 ←→ Asset Type (Lookup)
 ### Metadata
 
 - 3 Custom Objects with 8 custom fields
-- 1 Permission Set with comprehensive access
+- 2 Apex Classes (AssetProductController, ProductPricingService)
+- 2 Permission Sets (Asset_Taxonomy_Manager, ACC_Buyer)
 - 1 Custom Application with 3 custom tabs
 - Extensions to 2 standard objects
 
