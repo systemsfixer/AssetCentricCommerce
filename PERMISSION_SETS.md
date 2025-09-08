@@ -32,12 +32,16 @@ Administrative permission set for users who need to configure and manage the ass
 - **Product2** - Create, read, update, delete products (limited modifyAllRecords)
 - **ProductCategory** - Create, read, update, delete B2B Commerce product categories
 - **ProductCategoryProduct** - Create, read, update, delete category-product relationships
+- **Account** - Create, read, update, delete customer accounts
+- **Contact** - Create, read, update, delete customer contacts
 
 #### Field Permissions
 
 - All custom fields on asset taxonomy objects (editable)
 - Formula fields (read-only): Category_Hierarchy_Path**c, Type_Hierarchy_Path**c, Asset_Hierarchy_Path\_\_c
 - External ID fields for data loading integration
+- **Account.External_Id\_\_c** - External system integration identifier (editable)
+- **Contact.External_Id\_\_c** - External system integration identifier (editable)
 
 #### Apex Class Access
 
@@ -80,9 +84,15 @@ Read-only permission set for buyer users who need to browse their assets and fin
 - **Asset_Category\_\_c** - Read access to asset category hierarchy
 - **Asset_Type\_\_c** - Read access to equipment models and specifications
 - **Product2** - Read access to product catalog (record-level security applies)
+- **Account** - Read access to customer accounts (record-level security applies)
+- **Contact** - Read access to customer contacts (record-level security applies)
 
 #### Field Permissions (Read-Only)
 
+- **Account Fields**:
+  - `External_Id__c` - External system integration identifier
+- **Contact Fields**:
+  - `External_Id__c` - External system integration identifier
 - **Asset Fields**:
   - `Asset_Type__c` - Equipment type assignment
   - `Asset_Hierarchy_Path__c` - Full hierarchy visualization
@@ -111,6 +121,7 @@ Read-only permission set for buyer users who need to browse their assets and fin
 2. **Product Discovery**: Find products compatible with specific assets
 3. **Commerce Integration**: Get pricing and add compatible products to cart
 4. **Self-Service**: Independent product selection without administrative support
+5. **Contact Management**: View customer contacts for account relationships
 
 ## Security Considerations
 

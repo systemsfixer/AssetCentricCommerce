@@ -54,3 +54,8 @@ NUCLEAR_MEDICINE_ACCESSORY,Nuclear Medicine Accessory,MOLECULAR_IMAGING,Hot lab 
 FACILITY_INFRA,Facility Infrastructure,,UPS racks and infrastructure elements for imaging suites.
 RADIATION_PROTECTION,Radiation Protection,RADIATION_THERAPY,"Mobile shields, lead glass panel and protective gear"
 PATIENT_MONITORING,Patient Monitoring,,Bedside and modality-compatible patient monitoring devices.
+MRI_ACCESSORIES,MRI Accessories,MRI,RF coils and patient positioning accessories for MRI systems.
+CT_ACCESSORIES,CT Accessories,CT,Patient tables and detector components for CT systems.
+MOLECULAR_IMAGING_ACCESSORIES,Molecular Imaging Accessories,MOLECULAR_IMAGING,Detector rings and attenuation correction components for PET/SPECT systems.
+ULTRASOUND_ACCESSORIES,Ultrasound Accessories,ULTRASOUND,Transducer probes and imaging accessories for ultrasound systems.
+XRAY_ACCESSORIES,X-ray Accessories,XRAY,Detector panels and positioning accessories for radiography systems.

@@ -239,18 +239,28 @@ sf org assign permset -n ACC_Buyer
 
 The accelerator includes sample data files configured for Salesforce Inspector:
 
-- `sample-data/Asset_Categories.csv` - 52 hierarchical medical equipment categories
+- `sample-data/Asset_Categories.csv` - 61 hierarchical medical equipment categories (including accessory categories)
+- `sample-data/Asset_Types.csv` - 52 asset types (main equipment + sub-component models)
 - `sample-data/Products.csv` - 38 products (parts, consumables, accessories)
-- `sample-data/Asset_Types.csv` - 12 asset types (specific equipment models)
 - `sample-data/Asset_Type_Products.csv` - 38 compatibility relationships
+- `sample-data/Accounts.csv` - 12 healthcare organizations (hospitals and medical centers)
+- `sample-data/Assets.csv` - 48 medical equipment assets with hierarchical parent-child relationships
 - `sample-data/ProductCategories.csv` - 24 product categories for B2B Commerce catalog
 - `sample-data/ProductCategoryProducts.csv` - 65 product-to-category relationships
 
 **Key Loading Tips:**
 
 - Load Asset Categories first, retry failed records 2-3 times until all load successfully
+- Load parent Assets before sub-assets (hierarchical relationships)
 - CSV headers are configured for Salesforce Inspector lookup format
 - See [DATA_LOADING.md](DATA_LOADING.md) for complete details
+
+**Sample Asset Hierarchy Examples:**
+
+- MRI systems with RF coils, patient tables, and positioning accessories
+- CT scanners with detector arrays, X-ray tube assemblies, and cooling systems
+- PET/CT systems with detector rings, attenuation correction, and patient tables
+- Ultrasound systems with various transducer probes for different applications
 
 ### Verification Steps
 

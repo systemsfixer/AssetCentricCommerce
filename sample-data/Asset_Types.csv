@@ -29,3 +29,23 @@ BIOGRAPH_HORIZON_PET_CT,Biograph Horizon PET/CT,MOLECULAR_IMAGING,Compact PET/CT
 SYNGO_VIA_VB40,syngo.via VB40,IMAGING_IT,Advanced visualization platform for multi-modality imaging.
 TEAMPLAY_USAGE,teamplay Usage,IMAGING_IT,Fleet management and utilization analytics platform.
 SYNGO_CARBON_PACS,syngo Carbon PACS,IMAGING_IT,Enterprise PACS solution with AI integration capabilities.
+MRI_PATIENT_TABLE,MRI Patient Table,MRI_ACCESSORIES,Motorized patient positioning table with carbon fiber top for MRI compatibility.
+MRI_HEAD_COIL_20CH,20-Channel Head Coil,MRI_ACCESSORIES,High-resolution 20-channel phased array coil for neurological imaging.
+MRI_SPINE_COIL_32CH,32-Channel Spine Coil,MRI_ACCESSORIES,Flexible 32-channel spine coil for comprehensive spinal imaging.
+MRI_CARDIAC_COIL_18CH,18-Channel Cardiac Coil,MRI_ACCESSORIES,Specialized cardiac coil with ECG gating for heart imaging.
+MRI_BODY_COIL_32CH,32-Channel Body Coil,MRI_ACCESSORIES,Large FOV body coil for abdominal and thoracic imaging.
+CT_PATIENT_TABLE,CT Patient Table,CT_ACCESSORIES,Carbon fiber patient table with precision positioning for CT scanning.
+CT_DETECTOR_ARRAY,CT Detector Array,CT_ACCESSORIES,High-resolution detector array for multi-slice CT data acquisition.
+CT_XRAY_TUBE_ASSEMBLY,CT X-ray Tube Assembly,CT_ACCESSORIES,Rotating anode X-ray tube with advanced cooling system.
+CT_GANTRY_COOLING_SYSTEM,CT Gantry Cooling System,CT_ACCESSORIES,Liquid cooling system for CT gantry thermal management.
+PET_CT_PATIENT_TABLE,PET/CT Patient Table,MOLECULAR_IMAGING_ACCESSORIES,Precision patient table for PET/CT registration and positioning.
+PET_DETECTOR_RING,PET Detector Ring,MOLECULAR_IMAGING_ACCESSORIES,Lutetium oxyorthosilicate crystal detector ring for PET imaging.
+PET_CT_ATTENUATION_CORRECTION,PET/CT Attenuation Correction,MOLECULAR_IMAGING_ACCESSORIES,CT-based attenuation correction system for quantitative PET.
+ULTRASOUND_PROBE_LINEAR,Linear Array Ultrasound Probe,ULTRASOUND_ACCESSORIES,High-frequency linear probe for vascular and superficial imaging.
+ULTRASOUND_PROBE_PHASED,Phased Array Ultrasound Probe,ULTRASOUND_ACCESSORIES,Cardiac phased array probe for echocardiography applications.
+ULTRASOUND_PROBE_CONVEX,Convex Array Ultrasound Probe,ULTRASOUND_ACCESSORIES,Curved array probe for abdominal and obstetric imaging.
+ULTRASOUND_PROBE_TEE,Transesophageal Echo Probe,ULTRASOUND_ACCESSORIES,Specialized TEE probe for detailed cardiac imaging.
+XRAY_DETECTOR_PANEL,Digital X-ray Detector Panel,XRAY_ACCESSORIES,Flat panel digital detector for direct radiography imaging.
+XRAY_TUBE_HOUSING,X-ray Tube Housing,XRAY_ACCESSORIES,Rotating anode X-ray tube assembly with beam filtration.
+XRAY_COLLIMATOR_SYSTEM,X-ray Collimator System,XRAY_ACCESSORIES,Automated collimation system for radiation field control.
+ANGIO_CARM_ASSEMBLY,C-arm Assembly,XRAY_ACCESSORIES,Motorized C-arm for interventional angiography positioning.

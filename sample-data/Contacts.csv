@@ -1,0 +1,37 @@
+External_Id__c,FirstName,LastName,Email,Phone,Title,Account:Account:External_Id__c
+MAYO_CLINIC_ROCHESTER_CMO,Dr. Sarah,Mitchell,sarah.mitchell@mayo.invalid,(555) 284-2501,Chief Medical Officer,MAYO_CLINIC_ROCHESTER
+MAYO_CLINIC_ROCHESTER_IT,Michael,Thompson,michael.thompson@mayo.invalid,(555) 284-2502,IT Director,MAYO_CLINIC_ROCHESTER
+MAYO_CLINIC_ROCHESTER_PROC,Jennifer,Rodriguez,jennifer.rodriguez@mayo.invalid,(555) 284-2503,Procurement Manager,MAYO_CLINIC_ROCHESTER
+CLEVELAND_CLINIC_MAIN_CMO,Dr. Robert,Chen,robert.chen@cleveland.invalid,(555) 444-2201,Chief Medical Officer,CLEVELAND_CLINIC_MAIN
+CLEVELAND_CLINIC_MAIN_IT,Lisa,Anderson,lisa.anderson@cleveland.invalid,(555) 444-2202,IT Director,CLEVELAND_CLINIC_MAIN
+CLEVELAND_CLINIC_MAIN_PROC,David,Williams,david.williams@cleveland.invalid,(555) 444-2203,Procurement Manager,CLEVELAND_CLINIC_MAIN
+JOHNS_HOPKINS_HOSPITAL_CMO,Dr. Maria,Garcia,maria.garcia@hopkins.invalid,(555) 955-5001,Chief Medical Officer,JOHNS_HOPKINS_HOSPITAL
+JOHNS_HOPKINS_HOSPITAL_IT,James,Johnson,james.johnson@hopkins.invalid,(555) 955-5002,IT Director,JOHNS_HOPKINS_HOSPITAL
+JOHNS_HOPKINS_HOSPITAL_PROC,Patricia,Brown,patricia.brown@hopkins.invalid,(555) 955-5003,Procurement Manager,JOHNS_HOPKINS_HOSPITAL
+MASS_GENERAL_BRIGHAM_CMO,Dr. Christopher,Davis,christopher.davis@massgb.invalid,(555) 726-2001,Chief Medical Officer,MASS_GENERAL_BRIGHAM
+MASS_GENERAL_BRIGHAM_IT,Amanda,Miller,amanda.miller@massgb.invalid,(555) 726-2002,IT Director,MASS_GENERAL_BRIGHAM
+MASS_GENERAL_BRIGHAM_PROC,Kevin,Wilson,kevin.wilson@massgb.invalid,(555) 726-2003,Procurement Manager,MASS_GENERAL_BRIGHAM
+STANFORD_HEALTH_CARE_CMO,Dr. Rachel,Moore,rachel.moore@stanford.invalid,(555) 723-4001,Chief Medical Officer,STANFORD_HEALTH_CARE
+STANFORD_HEALTH_CARE_IT,Brian,Taylor,brian.taylor@stanford.invalid,(555) 723-4002,IT Director,STANFORD_HEALTH_CARE
+STANFORD_HEALTH_CARE_PROC,Nicole,Thomas,nicole.thomas@stanford.invalid,(555) 723-4003,Procurement Manager,STANFORD_HEALTH_CARE
+CEDARS_SINAI_MEDICAL_CMO,Dr. Daniel,Jackson,daniel.jackson@cedars.invalid,(555) 423-3278,Chief Medical Officer,CEDARS_SINAI_MEDICAL
+CEDARS_SINAI_MEDICAL_IT,Michelle,White,michelle.white@cedars.invalid,(555) 423-3279,IT Director,CEDARS_SINAI_MEDICAL
+CEDARS_SINAI_MEDICAL_PROC,Steven,Harris,steven.harris@cedars.invalid,(555) 423-3280,Procurement Manager,CEDARS_SINAI_MEDICAL
+NY_PRESBYTERIAN_HOSPITAL_CMO,Dr. Laura,Martin,laura.martin@nyp.invalid,(555) 746-5455,Chief Medical Officer,NY_PRESBYTERIAN_HOSPITAL
+NY_PRESBYTERIAN_HOSPITAL_IT,Mark,Thompson,mark.thompson@nyp.invalid,(555) 746-5456,IT Director,NY_PRESBYTERIAN_HOSPITAL
+NY_PRESBYTERIAN_HOSPITAL_PROC,Angela,Garcia,angela.garcia@nyp.invalid,(555) 746-5457,Procurement Manager,NY_PRESBYTERIAN_HOSPITAL
+UCSF_MEDICAL_CENTER_CMO,Dr. Jonathan,Lee,jonathan.lee@ucsf.invalid,(555) 476-1001,Chief Medical Officer,UCSF_MEDICAL_CENTER
+UCSF_MEDICAL_CENTER_IT,Stephanie,Clark,stephanie.clark@ucsf.invalid,(555) 476-1002,IT Director,UCSF_MEDICAL_CENTER
+UCSF_MEDICAL_CENTER_PROC,Ryan,Lewis,ryan.lewis@ucsf.invalid,(555) 476-1003,Procurement Manager,UCSF_MEDICAL_CENTER
+DUKE_UNIVERSITY_HOSPITAL_CMO,Dr. Elizabeth,Robinson,elizabeth.robinson@duke.invalid,(555) 684-8112,Chief Medical Officer,DUKE_UNIVERSITY_HOSPITAL
+DUKE_UNIVERSITY_HOSPITAL_IT,Matthew,Walker,matthew.walker@duke.invalid,(555) 684-8113,IT Director,DUKE_UNIVERSITY_HOSPITAL
+DUKE_UNIVERSITY_HOSPITAL_PROC,Kimberly,Hall,kimberly.hall@duke.invalid,(555) 684-8114,Procurement Manager,DUKE_UNIVERSITY_HOSPITAL
+HOUSTON_METHODIST_HOSPITAL_CMO,Dr. Andrew,Allen,andrew.allen@houston.invalid,(555) 790-3312,Chief Medical Officer,HOUSTON_METHODIST_HOSPITAL
+HOUSTON_METHODIST_HOSPITAL_IT,Jessica,Young,jessica.young@houston.invalid,(555) 790-3313,IT Director,HOUSTON_METHODIST_HOSPITAL
+HOUSTON_METHODIST_HOSPITAL_PROC,Timothy,Hernandez,timothy.hernandez@houston.invalid,(555) 790-3314,Procurement Manager,HOUSTON_METHODIST_HOSPITAL
+SEATTLE_CHILDRENS_HOSPITAL_CMO,Dr. Ashley,King,ashley.king@seattle.invalid,(555) 987-2001,Chief Medical Officer,SEATTLE_CHILDRENS_HOSPITAL
+SEATTLE_CHILDRENS_HOSPITAL_IT,Joshua,Wright,joshua.wright@seattle.invalid,(555) 987-2002,IT Director,SEATTLE_CHILDRENS_HOSPITAL
+SEATTLE_CHILDRENS_HOSPITAL_PROC,Megan,Lopez,megan.lopez@seattle.invalid,(555) 987-2003,Procurement Manager,SEATTLE_CHILDRENS_HOSPITAL
+EMORY_UNIVERSITY_HOSPITAL_CMO,Dr. Benjamin,Hill,benjamin.hill@emory.invalid,(555) 712-2001,Chief Medical Officer,EMORY_UNIVERSITY_HOSPITAL
+EMORY_UNIVERSITY_HOSPITAL_IT,Samantha,Scott,samantha.scott@emory.invalid,(555) 712-2002,IT Director,EMORY_UNIVERSITY_HOSPITAL
+EMORY_UNIVERSITY_HOSPITAL_PROC,Nathan,Green,nathan.green@emory.invalid,(555) 712-2003,Procurement Manager,EMORY_UNIVERSITY_HOSPITAL
