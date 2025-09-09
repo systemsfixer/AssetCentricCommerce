@@ -260,6 +260,17 @@ The accelerator includes sample data files configured for Salesforce Inspector:
 - `sample-data/Assets.csv` - 48 medical equipment assets with hierarchical parent-child relationships
 - `sample-data/ProductCategories.csv` - 30 product categories for B2B Commerce catalog
 - `sample-data/ProductCategoryProducts.csv` - 93 product-to-category relationships
+- `sample-data/BuyerAccounts.csv` - 12 buyer account records enabling B2B Commerce for healthcare organizations
+- `sample-data/BuyerGroupMembers.csv` - 12 buyer group memberships associating accounts with ACC buyer group
+
+**Data Loading Order:**
+
+Sample data must be loaded in this specific order due to dependencies:
+
+1. **Asset Categories** → **Asset Types** → **Products** → **Asset Type Products**
+2. **Accounts** → **Contacts** → **Assets** (parent assets first, then sub-assets)
+3. **Product Categories** → **Product Category Products**
+4. **Buyer Accounts** → **Buyer Group Members** (after manually updating BuyerGroup with External_Id\_\_c = "ACC")
 
 **Key Loading Tips:**
 

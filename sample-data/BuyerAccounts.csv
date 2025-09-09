@@ -1,0 +1,13 @@
+Name,BuyerStatus,CommerceType,IsActive,Buyer:Account:External_Id__c,CreditStatus,External_Id__c
+Mayo Clinic Rochester Buyer,Active,Buyer,true,MAYO_CLINIC_ROCHESTER,Good Credit,BUYER_MAYO_CLINIC_ROCHESTER
+Cleveland Clinic Main Buyer,Active,Buyer,true,CLEVELAND_CLINIC_MAIN,Good Credit,BUYER_CLEVELAND_CLINIC_MAIN
+Johns Hopkins Hospital Buyer,Active,Buyer,true,JOHNS_HOPKINS_HOSPITAL,Good Credit,BUYER_JOHNS_HOPKINS_HOSPITAL
+Mass General Brigham Buyer,Active,Buyer,true,MASS_GENERAL_BRIGHAM,Good Credit,BUYER_MASS_GENERAL_BRIGHAM
+Stanford Health Care Buyer,Active,Buyer,true,STANFORD_HEALTH_CARE,Good Credit,BUYER_STANFORD_HEALTH_CARE
+Cedars-Sinai Medical Buyer,Active,Buyer,true,CEDARS_SINAI_MEDICAL,Good Credit,BUYER_CEDARS_SINAI_MEDICAL
+NY Presbyterian Hospital Buyer,Active,Buyer,true,NY_PRESBYTERIAN_HOSPITAL,Good Credit,BUYER_NY_PRESBYTERIAN_HOSPITAL
+UCSF Medical Center Buyer,Active,Buyer,true,UCSF_MEDICAL_CENTER,Good Credit,BUYER_UCSF_MEDICAL_CENTER
+Duke University Hospital Buyer,Active,Buyer,true,DUKE_UNIVERSITY_HOSPITAL,Good Credit,BUYER_DUKE_UNIVERSITY_HOSPITAL
+Houston Methodist Hospital Buyer,Active,Buyer,true,HOUSTON_METHODIST_HOSPITAL,Good Credit,BUYER_HOUSTON_METHODIST_HOSPITAL
+Seattle Children's Hospital Buyer,Active,Buyer,true,SEATTLE_CHILDRENS_HOSPITAL,Good Credit,BUYER_SEATTLE_CHILDRENS_HOSPITAL
+Emory University Hospital Buyer,Active,Buyer,true,EMORY_UNIVERSITY_HOSPITAL,Good Credit,BUYER_EMORY_UNIVERSITY_HOSPITAL
