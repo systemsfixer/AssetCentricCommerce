@@ -32,50 +32,6 @@ public with sharing class ProductPricingService {
   }
 
   /**
-   * @description Product data structure with pricing information
-   */
-  public class ProductWithPricing {
-    @InvocableVariable(label='Product ID' description='Salesforce Product2 ID')
-    public String productId;
-
-    @InvocableVariable(label='Product Name' description='Name of the product')
-    public String productName;
-
-    @InvocableVariable(
-      label='Product Family'
-      description='Product family classification'
-    )
-    public String productFamily;
-
-    @InvocableVariable(label='Price' description='Unit price of the product')
-    public Decimal price;
-
-    @InvocableVariable(
-      label='Quantity'
-      description='Quantity (default 1 for compatibility)'
-    )
-    public Integer quantity;
-
-    public ProductWithPricing() {
-      this.quantity = 1;
-    }
-
-    public ProductWithPricing(
-      String productId,
-      String productName,
-      String productFamily,
-      Decimal price,
-      Integer quantity
-    ) {
-      this.productId = productId;
-      this.productName = productName;
-      this.productFamily = productFamily;
-      this.price = price;
-      this.quantity = quantity != null ? quantity : 1;
-    }
-  }
-
-  /**
    * @description Custom exception for pricing service errors
    */
   public class PricingServiceException extends Exception {
