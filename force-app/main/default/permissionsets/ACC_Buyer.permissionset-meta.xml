@@ -8,6 +8,10 @@
         <apexClass>ProductPricingService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>ProductWithPricing</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description
   >Permission set for buyer users to access asset-centric commerce functionality. Provides read access to Asset Types and Asset Categories to enable product discovery based on owned assets.</description>
     <fieldPermissions>
@@ -33,6 +37,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Asset.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Hierarchy_Display__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Hierarchy_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

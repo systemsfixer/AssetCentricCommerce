@@ -12,6 +12,10 @@
         <apexClass>ProductPricingService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>ProductWithPricing</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description
   >Full access to Asset Taxonomy objects for managing asset categories, types, and product relationships</description>
     <fieldPermissions>
@@ -37,6 +41,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Asset.External_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Hierarchy_Display__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Hierarchy_Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

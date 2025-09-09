@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hierarchy_Display__c</fullName>
+    <formula>IF(
+  ISBLANK(ParentId),
+  Name,
+  IF(
+    ISBLANK(Parent.ParentId),
+    "├── " + Name,
+    IF(
+      ISBLANK(Parent.Parent.ParentId),
+      "│   ├── " + Name,
+      "│   │   ├── " + Name
+    )
+  )
+)</formula>
+    <label>Hierarchy Display</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -32,7 +32,7 @@ public with sharing class ProductPricingService {
   }
 
   /**
-   * @description Output wrapper class with product pricing information
+   * @description Product data structure with pricing information
    */
   public class ProductWithPricing {
     @InvocableVariable(label='Product ID' description='Salesforce Product2 ID')
@@ -56,11 +56,22 @@ public with sharing class ProductPricingService {
     )
     public Integer quantity;
 
-    /**
-     * @description Constructor to initialize with default quantity
-     */
     public ProductWithPricing() {
       this.quantity = 1;
+    }
+
+    public ProductWithPricing(
+      String productId,
+      String productName,
+      String productFamily,
+      Decimal price,
+      Integer quantity
+    ) {
+      this.productId = productId;
+      this.productName = productName;
+      this.productFamily = productFamily;
+      this.price = price;
+      this.quantity = quantity != null ? quantity : 1;
     }
   }
 

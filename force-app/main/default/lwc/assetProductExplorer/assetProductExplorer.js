@@ -11,29 +11,28 @@ const TREE_COLUMNS = [
     label: "Asset Name",
     fieldName: "name",
     type: "text",
+    initialWidth: 280,
     cellAttributes: {
       iconName: { fieldName: "iconName" }
     }
   },
   {
-    label: "Asset Number",
-    fieldName: "assetNumber",
-    type: "text"
-  },
-  {
     label: "Status",
     fieldName: "status",
-    type: "text"
+    type: "text",
+    initialWidth: 120
   },
   {
     label: "Asset Type",
     fieldName: "assetTypeName",
-    type: "text"
+    type: "text",
+    initialWidth: 200
   },
   {
     label: "Hierarchy Path",
     fieldName: "hierarchyPath",
-    type: "text"
+    type: "text",
+    wrapText: true
   }
 ];
 
@@ -43,6 +42,7 @@ export default class AssetProductExplorer extends LightningElement {
   @api effectiveAccountId; // Account ID for pricing context
 
   @track assetData = [];
+  @track expandedRows = [];
   @track selectedAssetId;
   @track selectedAssetName;
   @track compatibleProducts = [];
@@ -116,10 +116,40 @@ export default class AssetProductExplorer extends LightningElement {
       return [];
     }
 
-    return data.map((asset) => ({
-      ...asset,
-      iconName: this.getAssetIcon(asset.status),
-      expanded: false
+    // Set up expanded rows for assets that have children
+    const expandedAssetIds = [];
+
+    const processedData = data.map((asset) => {
+      const processedAsset = {
+        ...asset,
+        iconName: this.getAssetIcon(asset.status)
+      };
+
+      // If this asset has children, add it to expanded rows
+      if (asset.children && asset.children.length > 0) {
+        expandedAssetIds.push(asset.id);
+        // Recursively process children
+        processedAsset.children = this.processChildAssets(asset.children);
+      }
+
+      return processedAsset;
+    });
+
+    // Update expanded rows
+    this.expandedRows = expandedAssetIds;
+
+    return processedData;
+  }
+
+  processChildAssets(children) {
+    if (!children || !Array.isArray(children)) {
+      return [];
+    }
+
+    return children.map((child) => ({
+      ...child,
+      iconName: this.getAssetIcon(child.status),
+      children: child.children ? this.processChildAssets(child.children) : []
     }));
   }
 
